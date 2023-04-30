@@ -1,0 +1,35 @@
+<router-outlet></router-outlet>
+
+
+<div class="body">
+  <div class="login">
+<mat-card>
+  <div class="img">
+  <img src = '../../assets/img/usuario.png' width="50%">
+  </div>
+  <div class="title">
+    <mat-card-header>
+        <h1 >User Login</h1>
+    </mat-card-header>
+  </div>
+    <mat-card-content>
+        <form class="example-form" [formGroup] ="loginform" (ngSubmit)="proceedlogin()">
+            <mat-form-field class="example-full-width">
+              <mat-label>Username</mat-label>
+              <input matInput formControlName="id" >
+            </mat-form-field>
+              <mat-form-field class="example-full-width">
+                <mat-label>Password</mat-label>
+                <input matInput type="password" formControlName="password" >
+              </mat-form-field>
+
+              <div>
+                <button mat-raised-button color="primary">Login</button>
+                <a routerLink="/home" mat-raised-button color="accent">Volver</a>
+              </div>
+          </form>
+    </mat-card-content>
+  </mat-card>
+
+</div>
+</div>

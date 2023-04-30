@@ -1,0 +1,56 @@
+<router-outlet></router-outlet>
+<div class="container">
+  <img src="../../assets/img/financyLogo.png" alt="Imagen" class="left" />
+  <form class="right">
+    <div class="body">
+      <div class="login">
+        <mat-card>
+          <div class="title">
+            <mat-card-header>
+              <h1>Registrate</h1>
+            </mat-card-header>
+          </div>
+          <mat-card-content>
+            <form class="example-form">
+              <mat-form-field class="example-full-width">
+                <mat-label>Nombres</mat-label>
+                <input matInput />
+              </mat-form-field>
+              <mat-form-field class="example-full-width">
+                <mat-label>Apellido Paterno</mat-label>
+                <input matInput type="password" />
+              </mat-form-field>
+              <mat-form-field class="example-full-width">
+                <mat-label>Apellido Materno</mat-label>
+                <input matInput type="password" />
+              </mat-form-field>
+              <mat-form-field class="example-full-width">
+                <mat-label>Correo electronico</mat-label>
+                <input matInput type="password" />
+              </mat-form-field>
+              <mat-form-field class="example-full-width">
+                <mat-label>Contraseña</mat-label>
+                <input matInput type="password" />
+              </mat-form-field>
+              <br />
+              <input type="checkbox" />
+              <p>He leido y acepto los terminos y condiciones</p>
+              <div>
+                <button mat-raised-button color="primary">Registrarse</button>
+                <a routerLink="/home" mat-raised-button color="accent"
+                  >Volver</a
+                >
+              </div>
+              <br />
+              <div>
+                <button routerLink="/login" mat-raised-button color="#53565D">
+                  Ya tienes una cuenta?
+                </button>
+              </div>
+            </form>
+          </mat-card-content>
+        </mat-card>
+      </div>
+    </div>
+  </form>
+</div>
