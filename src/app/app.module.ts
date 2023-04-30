@@ -23,6 +23,8 @@ import { ToastrModule } from 'ngx-toastr';
 import { HttpClientModule } from '@angular/common/http';
 import { RegisterComponent } from './register/register.component';
 
+import { CdkTableModule } from '@angular/cdk/table';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -47,7 +49,8 @@ import { RegisterComponent } from './register/register.component';
     MatCheckboxModule,
     FormsModule,
     ReactiveFormsModule,
-    ToastrModule.forRoot()
+    ToastrModule.forRoot(),
+    CdkTableModule
   ],
   providers: [],
   bootstrap: [AppComponent]
