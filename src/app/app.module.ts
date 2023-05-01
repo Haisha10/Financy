@@ -30,6 +30,7 @@ import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatDatepickerModule} from '@angular/material/datepicker';
 import {MatNativeDateModule} from '@angular/material/core';
 import { CreateWorkComponent } from './create-work/create-work.component';
+import { MainMenuComponent } from './main-menu/main-menu.component';
 
 @NgModule({
   declarations: [
@@ -38,7 +39,8 @@ import { CreateWorkComponent } from './create-work/create-work.component';
     LoginComponent,
     RegisterComponent,
     OfferWorkComponent,
-    CreateWorkComponent
+    CreateWorkComponent,
+    MainMenuComponent
   ],
   imports: [
     BrowserModule,
