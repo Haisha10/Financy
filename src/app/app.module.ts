@@ -22,15 +22,23 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { ToastrModule } from 'ngx-toastr';
 import { HttpClientModule } from '@angular/common/http';
 import { RegisterComponent } from './register/register.component';
-
 import { CdkTableModule } from '@angular/cdk/table';
+import { OfferWorkComponent } from './offer-work/offer-work.component';
+import {MatToolbarModule} from '@angular/material/toolbar';
+import {MatIconModule} from '@angular/material/icon';
+import {MatFormFieldModule} from '@angular/material/form-field';
+import {MatDatepickerModule} from '@angular/material/datepicker';
+import {MatNativeDateModule} from '@angular/material/core';
+import { CreateWorkComponent } from './create-work/create-work.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     LandingPageComponent,
     LoginComponent,
-    RegisterComponent
+    RegisterComponent,
+    OfferWorkComponent,
+    CreateWorkComponent
   ],
   imports: [
     BrowserModule,
@@ -50,7 +58,12 @@ import { CdkTableModule } from '@angular/cdk/table';
     FormsModule,
     ReactiveFormsModule,
     ToastrModule.forRoot(),
-    CdkTableModule
+    CdkTableModule,
+    MatToolbarModule,
+    MatIconModule,
+    MatFormFieldModule,
+    MatDatepickerModule,
+    MatNativeDateModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
