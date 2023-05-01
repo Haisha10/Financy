@@ -1,21 +1,4 @@
 {
-  "posts": [
-    {
-      "id": 1,
-      "title": "json-server",
-      "author": "typicode"
-    }
-  ],
-  "comments": [
-    {
-      "id": 1,
-      "body": "some comment",
-      "postId": 1
-    }
-  ],
-  "profile": {
-    "name": "typicode"
-  },
   "finances": [
     {
       "type": "Salida",
@@ -49,7 +32,7 @@
       "Nombre": "UPC",
       "Puesto": "Profesor",
       "Salario": 7000,
-      "Requisitos": "Ser graduado con post-grado y 5 años de expèriencia",
+      "Requisitos": "Ser graduado con post-grado y 5 años de experiencia",
       "id": 2
     }
   ]
