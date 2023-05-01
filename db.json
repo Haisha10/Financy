@@ -1,0 +1,46 @@
+{
+  "posts": [
+    {
+      "id": 1,
+      "title": "json-server",
+      "author": "typicode"
+    }
+  ],
+  "comments": [
+    {
+      "id": 1,
+      "body": "some comment",
+      "postId": 1
+    }
+  ],
+  "profile": {
+    "name": "typicode"
+  },
+  "finances": [
+    {
+      "type": "Salida",
+      "date": "1981-10-05T12:09:39Z",
+      "name": "Agua",
+      "exchange": 200,
+      "comment": "Reclamar subida de costo",
+      "id": 1
+    },
+    {
+      "id": 2,
+      "type": "Ingreso",
+      "date": "1981-10-06T12:09:39Z",
+      "name": "Planilla",
+      "exchange": 1025,
+      "balance": 300,
+      "comment": "Sin gratificacion"
+    },
+    {
+      "type": "Salida",
+      "date": "2023-04-08T05:00:00.000Z",
+      "name": "Luz",
+      "exchange": 350,
+      "comment": "",
+      "id": 3
+    }
+  ]
+}
