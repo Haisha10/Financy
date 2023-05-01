@@ -42,5 +42,15 @@
       "comment": "",
       "id": 3
     }
+  ],
+  "productList": [
+    {
+      "Id": 1,
+      "Nombre": "UPC",
+      "Puesto": "Profesor",
+      "Salario": 7000,
+      "Requisitos": "Ser graduado con post-grado y 5 años de expèriencia",
+      "id": 2
+    }
   ]
 }
