@@ -15,7 +15,7 @@
         <div class="card-title">Iniciar Sesión</div>
       </mat-card-header>
       <mat-card-content>
-        <form [formGroup] ="loginform" (ngSubmit)="proceedlogin()">
+        <form [formGroup] ="loginform">
           <div class="input-container">
             <p>Dirección de correo electrónico</p>
             <mat-form-field appearance="fill" class="email-input">
@@ -26,7 +26,7 @@
               <input matInput placeholder="*********" formControlName="password" type="password">
             </mat-form-field>
           </div>
-          <button mat-raised-button color="primary" class="button">Iniciar sesión</button>
+          <button mat-raised-button color="primary" class="button" routerLink="/menu">Iniciar sesión</button>
           <p style="color:black;text-align: center;">o</p>
           <p class="forget" style="color:blue;text-align: center;cursor: pointer;">Has olvidado la contraseña?</p>
         </form>
