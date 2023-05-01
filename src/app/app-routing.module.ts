@@ -6,6 +6,7 @@ import { RegisterComponent } from './register/register.component';
 import { OfferWorkComponent} from './offer-work/offer-work.component'
 import { FinancesComponent } from './finances/finances.component';
 import { MainMenuComponent } from './main-menu/main-menu.component';
+import { RecommendsComponent } from './recommends/recommends.component';
 
 const routes: Routes = [
   { path: '', redirectTo: '/home', pathMatch: 'full' },
@@ -14,7 +15,8 @@ const routes: Routes = [
   { path: 'register', component: RegisterComponent },
   { path:'offer-work',component: OfferWorkComponent},
   { path: 'finances', component: FinancesComponent },
-  { path:'main-menu',component:MainMenuComponent}
+  { path:'main-menu',component:MainMenuComponent},
+  { path:'recommends',component:RecommendsComponent}
 ];
 
 @NgModule({

@@ -35,6 +35,7 @@ import {MatDatepickerModule} from '@angular/material/datepicker';
 import {MatNativeDateModule} from '@angular/material/core';
 import { CreateWorkComponent } from './create-work/create-work.component';
 import { MainMenuComponent } from './main-menu/main-menu.component';
+import { RecommendsComponent } from './recommends/recommends.component';
 
 @NgModule({
   declarations: [
@@ -46,7 +47,8 @@ import { MainMenuComponent } from './main-menu/main-menu.component';
     FinancesAddEditComponent,
     OfferWorkComponent,
     CreateWorkComponent,
-    MainMenuComponent
+    MainMenuComponent,
+    RecommendsComponent
   ],
   imports: [
     BrowserModule,
