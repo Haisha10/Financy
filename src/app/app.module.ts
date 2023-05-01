@@ -24,14 +24,16 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { ToastrModule } from 'ngx-toastr';
 import { HttpClientModule } from '@angular/common/http';
 import { RegisterComponent } from './register/register.component';
-import { MatFormFieldModule } from '@angular/material/form-field';
-import { MatDatepickerModule } from '@angular/material/datepicker';
-import { MatNativeDateModule } from '@angular/material/core';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
 
-import { CdkTableModule } from '@angular/cdk/table';
 import { FinancesComponent } from './finances/finances.component';
 import { FinancesAddEditComponent } from './finances-add-edit/finances-add-edit.component';
+import { CdkTableModule } from '@angular/cdk/table';
+import { OfferWorkComponent } from './offer-work/offer-work.component';
+import {MatFormFieldModule} from '@angular/material/form-field';
+import {MatDatepickerModule} from '@angular/material/datepicker';
+import {MatNativeDateModule} from '@angular/material/core';
+import { CreateWorkComponent } from './create-work/create-work.component';
 
 @NgModule({
   declarations: [
@@ -40,7 +42,9 @@ import { FinancesAddEditComponent } from './finances-add-edit/finances-add-edit.
     LoginComponent,
     RegisterComponent,
     FinancesComponent,
-    FinancesAddEditComponent
+    FinancesAddEditComponent,
+    OfferWorkComponent,
+    CreateWorkComponent
   ],
   imports: [
     BrowserModule,
@@ -66,7 +70,11 @@ import { FinancesAddEditComponent } from './finances-add-edit/finances-add-edit.
     MatNativeDateModule,
     MatSnackBarModule,
     MatToolbarModule,
-    MatIconModule
+    MatIconModule,
+    MatToolbarModule,
+    MatIconModule,
+    MatFormFieldModule,
+    MatDatepickerModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
