@@ -4,7 +4,7 @@ import { LandingPageComponent } from './landing-page/landing-page.component';
 import { LoginComponent } from './login/login.component';
 import { RegisterComponent } from './register/register.component';
 import { OfferWorkComponent} from './offer-work/offer-work.component'
-import { MainMenuComponent } from './main-menu/main-menu.component';
+import { FinancesComponent } from './finances/finances.component';
 
 const routes: Routes = [
   { path: '', redirectTo: '/home', pathMatch: 'full' },
@@ -12,7 +12,7 @@ const routes: Routes = [
   { path: 'login', component: LoginComponent },
   { path: 'register', component: RegisterComponent },
   {path:'offer-work',component: OfferWorkComponent},
-  { path:'main-menu',component:MainMenuComponent}
+  { path: 'finances', component: FinancesComponent },
 ];
 
 @NgModule({
