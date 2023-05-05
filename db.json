@@ -1,32 +1,34 @@
 {
   "finances": [
     {
+      "id": 1,
+      "type": "Ingreso",
+      "date": "2023-05-01T12:09:39Z",
+      "name": "Planilla",
+      "exchange": 1025,
+      "balance": 1025,
+      "comment": "Sin gratificacion"
+    },
+    {
+      "type": "Salida",
+      "date": "2023-05-03T05:00:00.000Z",
+      "name": "Luz",
+      "exchange": 350,
+      "balance": 675,
+      "comment": "",
+      "id": 2
+    }
+    {
       "type": "Salida",
       "date": "2023-05-05T12:09:39Z",
       "name": "Agua",
       "exchange": 200,
       "balance": 475,
       "comment": "Reclamar subida de costo",
-      "id": 1
-    },
-    {
-      "type": "Salida",
-      "date": "2023-05-01T05:00:00.000Z",
-      "name": "Luz",
-      "exchange": 350,
-      "balance": 675,
-      "comment": "",
-      "id": 2
-    },
-    {
-      "id": 3,
-      "type": "Ingreso",
-      "date": "2023-05-03T12:09:39Z",
-      "name": "Planilla",
-      "exchange": 1025,
-      "balance": 1025,
-      "comment": "Sin gratificacion"
+      "id": 3
     }
+    
+    
   ],
   "productList": [
     {
