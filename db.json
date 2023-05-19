@@ -28,11 +28,26 @@
   ],
   "productList": [
     {
-      "Id": 1,
+      "id": 1,
       "Nombre": "UPC",
       "Puesto": "Profesor",
       "Salario": 7000,
-      "Requisitos": "Ser graduado con post-grado y 5 años de experiencia",
+      "Requisitos": "Ser graduado con post-grado y 5 años de experiencia"
+    }
+  ],
+  "users": [
+    {
+      "id": 1,
+      "name": "Alvaro",
+      "lastname": "Lamg",
+      "email": "alvaro@upc.edu.pe",
+      "password": "alamg123"
+    },
+    {
+      "name": "Marcos",
+      "lastname": "Olivos",
+      "email": "marcos@upc.edu.pe",
+      "password": "molivos123",
       "id": 2
     }
   ]

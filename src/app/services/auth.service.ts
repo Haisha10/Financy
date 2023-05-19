@@ -1,41 +1,63 @@
-import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { Router } from '@angular/router';
+
+import { UserService } from './user.service';
 
 @Injectable({
   providedIn: 'root'
 })
 export class AuthService {
+  isLoggedIn = false;
 
-  constructor(private http:HttpClient) {
+  constructor(private _userService: UserService, private _router: Router) {}
 
+  signup(user: any): void {
+    this._userService.signup(user).subscribe(
+      (response) => {
+        // Handle successful registration response
+        this._router.navigate(['/login']);
+      },
+      (error) => {
+        // Handle registration error
+      }
+    );
   }
-  apiurl='http://localhost:4200/user';
 
-  RegisterUser(inputdata:any){
-    return this.http.post(this.apiurl,inputdata)
+  login(credentials: any): void {
+    this._userService.checkUserExists(credentials.email).subscribe(
+      (userExists) => {
+        if (userExists) {
+          this._userService.login(credentials).subscribe(
+            (response) => {
+              // Handle successful login response
+              this.isLoggedIn = true;
+              this._router.navigate(['/menu']);
+            },
+            (error) => {
+              // Handle login error
+            }
+          );
+        } else {
+          // User does not exist, display error message or take appropriate action
+        }
+      },
+      (error) => {
+        // Handle error
+      }
+    );
   }
-  GetUserbyCode(id:any){
-    return this.http.get(this.apiurl+'/'+id);
+
+  logout(): void {
+    this.isLoggedIn = false;
+    this._router.navigate(['/login']);
   }
-  Getall(){
-    return this.http.get(this.apiurl);
-  }
-  updateuser(id:any,inputdata:any){
-    return this.http.put(this.apiurl+'/'+id,inputdata);
-  }
-  getuserrole(){
-    return this.http.get('http://localhost:4200/role');
-  }
-  isloggedin(){
-    return sessionStorage.getItem('username')!=null;
-  }
-  getrole(){
-    return sessionStorage.getItem('role')!=null?sessionStorage.getItem('role')?.toString():'';
-  }
-  GetAllCustomer(){
-    return this.http.get('http://localhost:4200/customer');
-  }
-  Getaccessbyrole(role:any,menu:any){
-    return this.http.get('http://localhost:4200/roleaccess?role='+role+'&menu='+menu)
+
+  canActivate(): boolean {
+    if (this.isLoggedIn) {
+      return true;
+    } else {
+      this._router.navigate(['/login']);
+      return false;
+    }
   }
 }

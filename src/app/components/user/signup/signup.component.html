@@ -1,0 +1,82 @@
+<router-outlet></router-outlet>
+<div class="container">
+  <div class="imagen">
+    <img src="assets/img/financyLogo.png" alt="Logo" />
+  </div>
+  <mat-card>
+    <div class="card-title" style="margin-top: 5vh; margin-bottom: 5vh">
+      Registrate
+    </div>
+    <mat-card-content>
+      <form [formGroup]="signupForm">
+        <div class="input-container">
+          <mat-form-field appearance="fill" class="text-input">
+            <mat-label>Nombre</mat-label>
+            <input
+              matInput
+              placeholder="Nombre"
+              formControlName="name"
+              type="text"
+            />
+          </mat-form-field>
+          <mat-form-field appearance="fill" class="text-input">
+            <mat-label>Apellido Paterno</mat-label>
+            <input
+              matInput
+              placeholder="Apellido"
+              formControlName="lastname"
+              type="text"
+            />
+          </mat-form-field>
+          <mat-form-field appearance="fill" class="email-input">
+            <mat-label>Correo Electrónico</mat-label>
+            <input
+              matInput
+              placeholder="ejemplo@dominio.com"
+              formControlName="email"
+              type="email"
+            />
+          </mat-form-field>
+          <mat-form-field appearance="fill" class="password-input">
+            <mat-label>Contraseña</mat-label>
+            <input
+              matInput
+              placeholder="*********"
+              formControlName="password"
+              type="password"
+            />
+          </mat-form-field>
+          <mat-form-field appearance="fill" class="password-input">
+            <mat-label>Confirmar Contraseña</mat-label>
+            <input
+              matInput
+              placeholder="*********"
+              formControlName="password-confirm"
+              type="password"
+            />
+          </mat-form-field>
+          <mat-checkbox
+            >He leído y acepto los terminos y condiciones</mat-checkbox
+          >
+        </div>
+        <button
+          mat-raised-button
+          color="primary"
+          class="button"
+          (click)="signup()"
+        >
+          Registrarse
+        </button>
+
+        <button
+          mat-raised-button
+          color="secondary"
+          class="button"
+          [routerLink]="['/login']"
+        >
+          Si ya tienes cuenta da click aqui
+        </button>
+      </form>
+    </mat-card-content>
+  </mat-card>
+</div>

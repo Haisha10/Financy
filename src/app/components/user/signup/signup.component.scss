@@ -1,3 +1,5 @@
+@import '~@angular/material/prebuilt-themes/indigo-pink.css';
+
 .container {
   display: flex;
   flex-wrap: wrap;
@@ -23,9 +25,7 @@
   }
 }
 
-
 .botones button {
-  color: #fff;
   padding: 10px 20px;
   border-radius: 4px;
   font-weight: bold;
@@ -36,7 +36,7 @@
   text-emphasis-color: black;
   border-radius: 0%;
 }
-.botones .rojo:hover{
+.botones .rojo:hover {
   font-size: 1.2em;
 }
 
@@ -52,7 +52,6 @@ mat-card-header {
 }
 
 mat-card {
-
   display: block;
   margin: 0 auto;
   max-width: 40em;
@@ -61,7 +60,7 @@ mat-card {
   border: 1px solid black;
 }
 
-mat-card:hover{
+mat-card:hover {
   transform: scale(1.01);
 }
 
@@ -70,12 +69,11 @@ mat-card:hover{
   text-align: center;
 }
 
-p{
+p {
   font-size: 1.5em;
 }
 
-
-.forget:hover{
+.forget:hover {
   font-size: 2em;
 }
 
@@ -109,5 +107,4 @@ p{
     display: flex;
     flex-direction: column;
   }
-
 }

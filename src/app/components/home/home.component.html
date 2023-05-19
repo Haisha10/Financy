@@ -1,0 +1,176 @@
+<router-outlet></router-outlet>
+<body>
+  <header class="header">
+    <div class="menu container">
+      <a href="#" class="logo"
+        ><img src="assets/img/financyLogo.png" alt=""
+      /></a>
+
+      <input type="checkbox" id="menu" />
+      <label for="menu">
+        <img src="assets/img/menu.png" class="menu-icono" alt="" />
+      </label>
+      <nav class="navbar">
+        <ul>
+          <li><a [routerLink]="['/home']" fragment="Inicio">Inicio</a></li>
+          <li>
+            <a [routerLink]="['/home']" fragment="Servicios">Servicios</a>
+          </li>
+          <li>
+            <a [routerLink]="['/home']" fragment="Información">Información</a>
+          </li>
+          <li>
+            <a [routerLink]="['/home']" fragment="Nosotros">Nosotros</a>
+          </li>
+          <li>
+            <a [routerLink]="['/home']" fragment="Contacto">Contacto</a>
+          </li>
+        </ul>
+      </nav>
+    </div>
+
+    <div class="headercontent container">
+      <div class="header-txt">
+        <h1>Retoma el control de tus finanzas y dale un respiro a tu vida</h1>
+        <a [routerLink]="['/signup']" class="btn-1">Registrate ya!</a>
+      </div>
+    </div>
+  </header>
+
+  <section id="Servicios" class="general container">
+    <h2>Servicios</h2>
+
+    <div class="general-content">
+      <div class="general-1 txt">
+        <h3>Administar</h3>
+        <p>Aquí podrás administrar correctamente tus ingresos y egresos.</p>
+      </div>
+
+      <div class="general-2 txt">
+        <h3>Encontrar empleo</h3>
+        <p>Podrás econtrar consejos para optimizar tu administracion</p>
+      </div>
+
+      <div class="general-3 txt">
+        <h3>Consejos Financieros</h3>
+        <p>Encontraras tu empleo ideal de acuerdo a tus necesidades</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="Información" class="info-1">
+    <div class="info-content container">
+      <h2>Informacion</h2>
+
+      <div class="info-circle">
+        <div class="circle-txt">
+          <div class="circle-1">
+            <h3>90%</h3>
+          </div>
+          <p>
+            Nuestros usuarios prefieren usar financy para gestionar su dinero
+          </p>
+        </div>
+
+        <div class="circle-txt">
+          <div class="circle-1">
+            <h3>1M</h3>
+          </div>
+          <p>Contamos con mas de 1M de ususarios</p>
+        </div>
+
+        <div class="circle-txt">
+          <div class="circle-1">
+            <h3>2 años</h3>
+          </div>
+          <p>Llevamos mas de dos años en el mercado laboral</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="Nosotros" class="portafolios container">
+    <h2>Nosotros</h2>
+    <div class="portafolio">
+      <img src="assets/img/benefit1.png" alt="" />
+      <div class="portafolio-1">
+        <h3>OBJETIVO</h3>
+        <p>
+          La idea de negocio de Finansy surgió en base a los problemas
+          financieros personales que se observan en la vida cotidiana. Por un
+          mal uso de dinero en las compras del día a día, pagos habituales con
+          respecto al hogar, estudio, entre otras opciones
+        </p>
+      </div>
+    </div>
+
+    <div class="portafolio">
+      <div class="portafolio-2">
+        <h3>MISION</h3>
+        <p>
+          Mejorar la estabilidad económica de las personas, por ende, también su
+          calidad de vida, brindando como ayuda la administración del control de
+          ingresos o gastos que realice con su dinero.
+        </p>
+      </div>
+      <img src="assets/img/misi.png" alt="" />
+    </div>
+
+    <div class="portafolio">
+      <img src="assets/img/vision.png" alt="" />
+      <div class="portafolio-1">
+        <h3>VISION</h3>
+        <p>
+          Nuestra visión, a corto plazo, es ser reconocida por la mayoría de los
+          peruanos que usen la aplicación constantemente y al mismo tiempo que
+          estén satisfechos con el servicio brindado.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section class="info-2">
+    <div class="info-content container">
+      <h2>Testimonios</h2>
+
+      <div class="testi">
+        <div class="testi-left">
+          <div class="testi-txt">
+            <img src="assets/img/t1.png" alt="" />
+            <h3>Lorena La Torre Diaz</h3>
+            <p>Cumplen con los que prometen.Encantada con Financy</p>
+          </div>
+
+          <div class="testi-txt">
+            <img src="assets/img/t2.png" alt="" />
+            <h3>Alvaro Gutierrez Quesada</h3>
+            <p>Me ayudo a encontrar un buen trabajo con un excelente salario</p>
+          </div>
+        </div>
+
+        <div class="testi-right">
+          <div class="testi-txt">
+            <img src="assets/img/t3.png" alt="" />
+            <h3>Joyce Olivos Lopez</h3>
+            <p>
+              Pude ahorrar mucho mas gracias a las recomendaciones de Financy
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer id="Contacto" class="footer container">
+    <h2>Contactanos</h2>
+
+    <form>
+      <input class="campo" type="text" placeholder="Email" />
+      <input class="campo" type="email" placeholder="Comentario" />
+      <input type="submit" class="btn-2" value="Enviar" />
+    </form>
+    <div class="footer-txt">
+      <p>Copyright- Todos los derechos 2023</p>
+    </div>
+  </footer>
+</body>
