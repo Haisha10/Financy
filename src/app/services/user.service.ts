@@ -15,18 +15,18 @@ export class UserService {
 
   constructor(private http: HttpClient) { }
 
-  signup(user: User): Observable<any> {
+  signup(user: any): Observable<any> {
     return this.http.post(`${this.baseUrl}/users`, user);
   }
 
-  login(credentials: User): Observable<any> {
+  login(credentials: any): Observable<any> {
     return this.http.get(`${this.baseUrl}/users`, {
       params: new HttpParams().set('email', credentials.email).set('password', credentials.password)
     });
   }
 
   checkUserExists(email: string): Observable<boolean> {
-    return this.http.get<User[]>(`${this.baseUrl}/users`, {
+    return this.http.get<any[]>(`${this.baseUrl}/users`, {
       params: new HttpParams().set('email', email)
     }).pipe(
       map((response: any[]) => {

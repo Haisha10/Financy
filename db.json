@@ -27,8 +27,6 @@
       "comment": "Reclamar subida de costo",
       "id": 3
     }
-    
-    
   ],
   "productList": [
     {
@@ -53,6 +51,13 @@
       "email": "marcos@upc.edu.pe",
       "password": "molivos123",
       "id": 2
+    },
+    {
+      "name": "Xiomara",
+      "lastname": "Picon",
+      "email": "xiomara@upc.edu.pe",
+      "password": "xpicon123",
+      "id": 3
     }
   ]
 }

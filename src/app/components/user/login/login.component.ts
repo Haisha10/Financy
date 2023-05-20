@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
-import { Router } from '@angular/router';
 import { FormBuilder, Validators } from '@angular/forms';
 import { AuthService } from 'src/app/services/auth.service';
+import { SnackBarService } from 'src/app/services/snack-bar.service';
 
 @Component({
   selector: 'app-login',
@@ -9,10 +9,14 @@ import { AuthService } from 'src/app/services/auth.service';
   styleUrls: ['./login.component.scss']
 })
 export class LoginComponent {
+  isPasswordHide: boolean;
   constructor(
-    private _router: Router,
     private _builder: FormBuilder,
-    private _authService: AuthService) {}
+    private _authService: AuthService,
+    private _snackBar: SnackBarService
+  ) {
+    this.isPasswordHide = true
+  }
 
   loginForm = this._builder.group({
     email: this._builder.control('', Validators.required),
@@ -20,12 +24,16 @@ export class LoginComponent {
   });
 
   login(): void {
-    const credentials = {
-      email: this.loginForm.value.email,
-      password: this.loginForm.value.password
-    };
-    this._authService.login(credentials);
-    this._router.navigate(['/menu']);
+    if (this.loginForm.valid) {
+      const credentials = {
+        email: this.loginForm.value.email,
+        password: this.loginForm.value.password
+      };
+      this._authService.login(credentials);
+    }
+    else {
+      this._snackBar.openSnackBar("Rellene todos los campos correctamente.")
+    }
   }
 
 }

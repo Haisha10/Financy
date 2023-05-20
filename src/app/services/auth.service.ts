@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { Router } from '@angular/router';
 
 import { UserService } from './user.service';
+import { SnackBarService } from './snack-bar.service';
 
 @Injectable({
   providedIn: 'root'
@@ -9,41 +10,41 @@ import { UserService } from './user.service';
 export class AuthService {
   isLoggedIn = false;
 
-  constructor(private _userService: UserService, private _router: Router) {}
+  constructor(
+    private _userService: UserService,
+    private _router: Router,
+    private _snackBar: SnackBarService
+    ) { }
 
   signup(user: any): void {
-    this._userService.signup(user).subscribe(
-      (response) => {
-        // Handle successful registration response
+    this._userService.signup(user).subscribe({
+      next: (res) => {
+        this._snackBar.openSnackBar("Registro exitoso!");
         this._router.navigate(['/login']);
       },
-      (error) => {
-        // Handle registration error
-      }
-    );
+      error: console.log
+    });
   }
 
   login(credentials: any): void {
-    this._userService.checkUserExists(credentials.email).subscribe(
-      (userExists) => {
+    this._userService.checkUserExists(credentials.email).subscribe({
+      next: (userExists) => {
         if (userExists) {
-          this._userService.login(credentials).subscribe(
-            (response) => {
-              // Handle successful login response
+          this._userService.login(credentials).subscribe({
+            next: (res) => {
               this.isLoggedIn = true;
+              this._snackBar.openSnackBar("Inicio de sesión exitoso!");
               this._router.navigate(['/menu']);
             },
-            (error) => {
-              // Handle login error
-            }
-          );
+            error: console.log
+          });
         } else {
-          // User does not exist, display error message or take appropriate action
+          this._snackBar.openSnackBar("Correo electrónico o contraseña incorrecta.");
         }
       },
-      (error) => {
-        // Handle error
-      }
+      error: console.log
+      // Handle error
+    }
     );
   }
 

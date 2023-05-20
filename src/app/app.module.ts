@@ -19,6 +19,7 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatCheckboxModule } from '@angular/material/checkbox';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MatSnackBarModule } from '@angular/material/snack-bar';
 
 import { MatTableModule } from '@angular/material/table';
 import { MatPaginatorModule } from '@angular/material/paginator';
@@ -27,7 +28,6 @@ import { MatDialogModule } from '@angular/material/dialog';
 import { MatSelectModule } from '@angular/material/select';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
-import { MatSnackBarModule } from '@angular/material/snack-bar';
 
 import { FinancesComponent } from './finances/finances.component';
 import { FinancesAddEditComponent } from './finances-add-edit/finances-add-edit.component';
@@ -63,6 +63,7 @@ import { RecommendsComponent } from './recommends/recommends.component';
     MatCheckboxModule,
     MatFormFieldModule,
     BrowserAnimationsModule,
+    MatSnackBarModule,
     HttpClientModule,
     MatTableModule,
     MatPaginatorModule,
@@ -72,8 +73,7 @@ import { RecommendsComponent } from './recommends/recommends.component';
     FormsModule,
     ReactiveFormsModule,
     MatDatepickerModule,
-    MatNativeDateModule,
-    MatSnackBarModule
+    MatNativeDateModule
   ],
   providers: [],
   bootstrap: [AppComponent]
