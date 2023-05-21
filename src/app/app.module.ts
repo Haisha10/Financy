@@ -9,6 +9,8 @@ import { RouterModule } from '@angular/router';
 import { HomeComponent } from './components/home/home.component';
 import { LoginComponent } from './components/user/login/login.component';
 import { SignupComponent } from './components/user/signup/signup.component';
+import { ToolBarComponent } from './components/tool-bar/tool-bar.component';
+import { MenuComponent } from './components/menu/menu.component';
 
 // Material Import
 import { MatToolbarModule } from '@angular/material/toolbar';
@@ -20,6 +22,9 @@ import { MatCheckboxModule } from '@angular/material/checkbox';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
+import { MatSidenavModule } from '@angular/material/sidenav';
+import { MatListModule } from '@angular/material/list';
+import { MatGridListModule } from '@angular/material/grid-list';
 
 import { MatTableModule } from '@angular/material/table';
 import { MatPaginatorModule } from '@angular/material/paginator';
@@ -35,7 +40,6 @@ import { OfferWorkComponent } from './offer-work/offer-work.component';
 import { MatDatepickerModule } from '@angular/material/datepicker';
 import { MatNativeDateModule } from '@angular/material/core';
 import { CreateWorkComponent } from './create-work/create-work.component';
-import { MainMenuComponent } from './main-menu/main-menu.component';
 import { RecommendsComponent } from './recommends/recommends.component';
 
 @NgModule({
@@ -44,12 +48,13 @@ import { RecommendsComponent } from './recommends/recommends.component';
     HomeComponent,
     LoginComponent,
     SignupComponent,
+    ToolBarComponent,
+    MenuComponent,
     FinancesComponent,
     FinancesAddEditComponent,
     OfferWorkComponent,
     CreateWorkComponent,
-    MainMenuComponent,
-    RecommendsComponent,
+    RecommendsComponent
   ],
   imports: [
     BrowserModule,
@@ -64,6 +69,9 @@ import { RecommendsComponent } from './recommends/recommends.component';
     MatFormFieldModule,
     BrowserAnimationsModule,
     MatSnackBarModule,
+    MatSidenavModule,
+    MatListModule,
+    MatGridListModule,
     HttpClientModule,
     MatTableModule,
     MatPaginatorModule,

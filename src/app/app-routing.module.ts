@@ -11,7 +11,7 @@ import { AuthService } from './services/auth.service';
 
 import { OfferWorkComponent } from './offer-work/offer-work.component'
 import { FinancesComponent } from './finances/finances.component';
-import { MainMenuComponent } from './main-menu/main-menu.component';
+import { MenuComponent } from './components/menu/menu.component';
 import { RecommendsComponent } from './recommends/recommends.component';
 
 const routes: Routes = [
@@ -21,7 +21,7 @@ const routes: Routes = [
   { path: 'signup', component: SignupComponent },
   { path: 'offer-work', component: OfferWorkComponent, canActivate: [AuthService]},
   { path: 'finances', component: FinancesComponent, canActivate: [AuthService] },
-  { path: 'menu', component: MainMenuComponent, canActivate: [AuthService] },
+  { path: 'menu', component: MenuComponent, canActivate: [AuthService] },
   { path: 'recommends', component: RecommendsComponent, canActivate: [AuthService] }
 ];
 
