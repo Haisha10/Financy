@@ -1,0 +1,52 @@
+<mat-toolbar id="toolbar" color="primary">
+  <button mat-icon-button (click)="toggleSidenav()">
+    <mat-icon>menu</mat-icon>
+  </button>
+  <span class="toolbar-title">Financy</span>
+</mat-toolbar>
+
+<mat-drawer-container class="container" [hasBackdrop]="true">
+  <mat-drawer
+    #drawer
+    [mode]="'over'"
+    [opened]="isSidenavOpen"
+    id="drawer-content"
+  >
+    <!-- Contenido del menú lateral -->
+    <mat-nav-list id="drawer-list">
+      <mat-icon id="user-icon">account_circle</mat-icon>
+      <h1>{{ currentUser.name }} {{ currentUser.lastname }}</h1>
+      
+      <a mat-list-item routerLink="/menu">
+        <mat-icon class="mat-icon-inline">home</mat-icon>
+        <span>Inicio</span>
+      </a>
+      <a mat-list-item routerLink="/finances">
+        <mat-icon class="mat-icon-inline">attach_money</mat-icon>
+        <span>Gestionar Finanzas</span>
+      </a>
+      <a mat-list-item routerLink="/offer-work">
+        <mat-icon class="mat-icon-inline">work</mat-icon>
+        <span>Busca Empleo</span>
+      </a>
+      <a mat-list-item routerLink="/recommends">
+        <mat-icon class="mat-icon-inline">lightbulb</mat-icon>
+        <span>Recomendaciones Financieras</span>
+      </a>
+      <a mat-list-item routerLink="/offer-work">
+        <mat-icon class="mat-icon-inline">business</mat-icon>
+        <span>Oferta Trabajos</span>
+      </a>
+      <div class="spacer"></div>
+      <a mat-list-item (click)="logout()" id="logout-button">
+        <mat-icon class="mat-icon-inline">exit_to_app</mat-icon>
+        <span>Cerrar Sesión</span>
+      </a>
+    </mat-nav-list>
+  </mat-drawer>
+
+  <mat-drawer-content>
+    <!-- Contenido principal -->
+    <ng-content></ng-content>
+  </mat-drawer-content>
+</mat-drawer-container>

@@ -1,0 +1,61 @@
+#drawer-content {
+  width: 250px; /* Adjust the desired width */
+}
+
+#toolbar {
+  height: 6vh;
+}
+
+#user-icon {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 50%;
+  height: auto;
+  font-size: 500%;
+  text-align: center;
+}
+
+#drawer-list h1 {
+  text-align: center;
+}
+
+.spacer {
+  flex-grow: 1;
+}
+
+#drawer-list a mat-icon{
+  vertical-align: text-bottom;
+  margin-right: 10px;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+
+#logout-button {
+  position: absolute;
+  bottom: 16px;
+  left: 16px;
+}
+
+#logout-button span {
+  color: red !important;
+}
+
+#logout-button mat-icon {
+  color: red !important;
+}
+
+#logout-button:hover {
+  background-color: rgba(255, 0, 0, 0.85) !important;
+}
+
+#logout-button:hover span {
+  color: white !important;
+}
+#logout-button:hover mat-icon {
+  color: white !important;
+}
