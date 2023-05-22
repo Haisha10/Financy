@@ -16,7 +16,7 @@
     <mat-nav-list id="drawer-list">
       <mat-icon id="user-icon">account_circle</mat-icon>
       <h1>{{ currentUser.name }} {{ currentUser.lastname }}</h1>
-      
+
       <a mat-list-item routerLink="/menu">
         <mat-icon class="mat-icon-inline">home</mat-icon>
         <span>Inicio</span>
@@ -27,15 +27,15 @@
       </a>
       <a mat-list-item routerLink="/offer-work">
         <mat-icon class="mat-icon-inline">work</mat-icon>
-        <span>Busca Empleo</span>
+        <span>Buscar Empleo</span>
       </a>
       <a mat-list-item routerLink="/recommends">
         <mat-icon class="mat-icon-inline">lightbulb</mat-icon>
-        <span>Recomendaciones Financieras</span>
+        <span>Recomendaciones</span>
       </a>
       <a mat-list-item routerLink="/offer-work">
         <mat-icon class="mat-icon-inline">business</mat-icon>
-        <span>Oferta Trabajos</span>
+        <span>Ofertar Trabajos</span>
       </a>
       <div class="spacer"></div>
       <a mat-list-item (click)="logout()" id="logout-button">
