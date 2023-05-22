@@ -1,5 +1,48 @@
 .body {
   min-height: 94vh;
-  height: 100%;
-  width: 100vw;
+  min-width: 100vw;
+  max-width: 100vw;
+
+  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+    url("../../../assets/img/background.jpg");
+  background-position: center bottom;
+  background-repeat: repeat;
+  background-attachment: fixed;
+}
+
+.body-container {
+  height: 94%;
+  width: 96%;
+  padding: 2%;
+}
+
+.body-container h1 {
+  font-size: 5em;
+  line-height: normal;
+  font-weight: bolder;
+  color: white;
+  text-align: center;
+  padding-bottom: 2%;
+}
+
+.card-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+  grid-gap: 20px;
+}
+
+mat-card-title {
+  font-size: 1.5em;
+  line-height: normal;
+  font-weight: bold;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: aqua;
+  margin-bottom: 10px;
+}
+
+.mat-card-image {
+  width: auto;
+  height: 400px;
 }

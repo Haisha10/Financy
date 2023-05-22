@@ -1,45 +1,53 @@
 <app-tool-bar>
   <div class="body">
-    <h1>Bienvenido a Financy, {{currentUser.name}}</h1>
-    <mat-grid-list [cols]="cols" rowHeight="200px" gutterSize="16px" class="responsive-grid">
-      <mat-grid-tile>
-        <mat-card>
-          <!-- Contenido de la tarjeta -->
-          <mat-card-header>
-            <mat-card-title>Gestiona tus Finanzas</mat-card-title>
-          </mat-card-header>
-          <mat-card-content>
-            <p>aa</p>
-          </mat-card-content>
-        </mat-card>
-        <mat-card>
-          <!-- Contenido de la tarjeta -->
-          <mat-card-header>
-            <mat-card-title>Busca Empleo</mat-card-title>
-          </mat-card-header>
-          <mat-card-content>
-            <p>bb</p>
-          </mat-card-content>
-        </mat-card>
-        <mat-card>
-          <!-- Contenido de la tarjeta -->
-          <mat-card-header>
-            <mat-card-title>Recomendaciones Financieras</mat-card-title>
-          </mat-card-header>
-          <mat-card-content>
-            <p>cc</p>
-          </mat-card-content>
-        </mat-card>
-        <mat-card>
-          <!-- Contenido de la tarjeta -->
-          <mat-card-header>
-            <mat-card-title>Oferta Trabajos</mat-card-title>
-          </mat-card-header>
-          <mat-card-content>
-            <p>dd</p>
-          </mat-card-content>
-        </mat-card>
-      </mat-grid-tile>
-    </mat-grid-list>
+    <div class="body-container">
+      <h1>Bienvenido a Financy, {{currentUser.name}}</h1>
+      <div class="card-container">
+        <div class="card-router" [routerLink]="['/finances']">
+          <mat-card [routerLink]="['/finances']">
+            <mat-card-header>
+              <mat-card-title><span>Gestiona tus Finanzas</span></mat-card-title>
+            </mat-card-header>
+            <img mat-card-image class="mat-card-image" src="../../../assets/img/finances-manage.jpg"/>
+            <mat-card-content>
+              <p>En el Gestor de Finanzas podrás manejar tus finanzas de manera detallada, permiendo conocer tus ingresos y egresos.</p>
+            </mat-card-content>
+          </mat-card>
+        </div>
+        <div class="card-router" [routerLink]="['/offer-work']">
+          <mat-card>
+            <mat-card-header>
+              <mat-card-title><span>Empleo</span></mat-card-title>
+            </mat-card-header>
+            <img mat-card-image class="mat-card-image" src="../../../assets/img/search-job.jpg"/>
+            <mat-card-content>
+              <p>bb</p>
+            </mat-card-content>
+          </mat-card>
+        </div>
+        <div class="card-router" [routerLink]="['/recommends']">
+          <mat-card>
+            <mat-card-header>
+              <mat-card-title><span>Recomendaciones Financieras</span></mat-card-title>
+            </mat-card-header>
+            <img mat-card-image class="mat-card-image" src="../../../assets/img/recommendations.jpg"/>
+            <mat-card-content>
+              <p>cc</p>
+            </mat-card-content>
+          </mat-card>
+        </div>
+        <div class="card-router" [routerLink]="['/offer-work']">
+          <mat-card>
+            <mat-card-header>
+              <mat-card-title><span>Oferta Trabajos</span></mat-card-title>
+            </mat-card-header>
+            <img mat-card-image class="mat-card-image" src="../../../assets/img/create-job.jpeg"/>
+            <mat-card-content>
+              <p>dd</p>
+            </mat-card-content>
+          </mat-card>
+        </div>
+      </div>
+    </div>
   </div>
 </app-tool-bar>

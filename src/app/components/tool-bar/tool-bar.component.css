@@ -6,6 +6,11 @@
   height: 6vh;
 }
 
+#toolbar img {
+  height: 100%;
+  width: auto;
+}
+
 #user-icon {
   display: block;
   margin-left: auto;
@@ -21,7 +26,7 @@
 }
 
 .spacer {
-  flex-grow: 1;
+  flex: 1 1 auto;
 }
 
 #drawer-list a mat-icon{
@@ -36,9 +41,7 @@
 }
 
 #logout-button {
-  position: absolute;
-  bottom: 16px;
-  width: 100%;
+  margin-top: 50px;
 }
 
 #logout-button span {
