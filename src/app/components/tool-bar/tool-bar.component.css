@@ -11,6 +11,13 @@
   width: auto;
 }
 
+.toolbar-title {
+  font-size: 1.5em;
+  padding-left: 10px;
+  letter-spacing: 2px;
+  font-family: Impact,Haettenschweiler,Franklin Gothic Bold,Charcoal,Helvetica Inserat,Bitstream Vera Sans Bold,Arial Black,sans serif;
+}
+
 #user-icon {
   display: block;
   margin-left: auto;

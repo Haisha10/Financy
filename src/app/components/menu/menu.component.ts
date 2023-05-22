@@ -9,20 +9,7 @@ import { AuthService } from 'src/app/services/auth.service';
 export class MenuComponent {
   constructor(
     private _authService: AuthService
-  ) {
-    this.setColsBasedOnScreenSize();
-  }
+  ) { }
   currentUser = this._authService.getLoggedUser();
   cols: number = 4;
-
-  setColsBasedOnScreenSize(): void {
-    const screenWidth = window.innerWidth;
-    if (screenWidth < 600) {
-      this.cols = 1;
-    } else if (screenWidth < 900) {
-      this.cols = 2;
-    } else {
-      this.cols = 4;
-    }
-  }
 }

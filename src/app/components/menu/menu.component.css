@@ -31,18 +31,32 @@
   grid-gap: 20px;
 }
 
-mat-card-title {
-  font-size: 1.5em;
-  line-height: normal;
-  font-weight: bold;
+.card-title {
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: aqua;
+  text-align: center;
   margin-bottom: 10px;
+  height: 65px;
+}
+
+.card-title span {
+  display: inline-block;
+  vertical-align: middle;
+  font-size: 1.5em;
+  line-height: normal;
+  font-weight: bold;
 }
 
 .mat-card-image {
   width: auto;
-  height: 400px;
+  height: auto;
+  padding-left: 5px;
+  padding-right: 5px;
+  padding-bottom: 2%;
+}
+
+.card-router {
+  text-decoration: none;
+  color: black;
 }

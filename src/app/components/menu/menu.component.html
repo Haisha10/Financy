@@ -3,31 +3,31 @@
     <div class="body-container">
       <h1>Bienvenido a Financy, {{currentUser.name}}</h1>
       <div class="card-container">
-        <div class="card-router" [routerLink]="['/finances']">
+        <a class="card-router" [routerLink]="['/finances']">
           <mat-card [routerLink]="['/finances']">
-            <mat-card-header>
-              <mat-card-title><span>Gestiona tus Finanzas</span></mat-card-title>
+            <mat-card-header class="card-title">
+              <mat-card-title><span>Gestionar Finanzas</span></mat-card-title>
             </mat-card-header>
             <img mat-card-image class="mat-card-image" src="../../../assets/img/finances-manage.jpg"/>
             <mat-card-content>
               <p>En el Gestor de Finanzas podrás manejar tus finanzas de manera detallada, permiendo conocer tus ingresos y egresos.</p>
             </mat-card-content>
           </mat-card>
-        </div>
-        <div class="card-router" [routerLink]="['/offer-work']">
+        </a>
+        <a class="card-router" [routerLink]="['/offer-work']">
           <mat-card>
-            <mat-card-header>
-              <mat-card-title><span>Empleo</span></mat-card-title>
+            <mat-card-header class="card-title">
+              <mat-card-title><span>Buscar Empleo</span></mat-card-title>
             </mat-card-header>
             <img mat-card-image class="mat-card-image" src="../../../assets/img/search-job.jpg"/>
             <mat-card-content>
               <p>bb</p>
             </mat-card-content>
           </mat-card>
-        </div>
-        <div class="card-router" [routerLink]="['/recommends']">
+        </a>
+        <a class="card-router" [routerLink]="['/recommends']">
           <mat-card>
-            <mat-card-header>
+            <mat-card-header class="card-title">
               <mat-card-title><span>Recomendaciones Financieras</span></mat-card-title>
             </mat-card-header>
             <img mat-card-image class="mat-card-image" src="../../../assets/img/recommendations.jpg"/>
@@ -35,18 +35,18 @@
               <p>cc</p>
             </mat-card-content>
           </mat-card>
-        </div>
-        <div class="card-router" [routerLink]="['/offer-work']">
+        </a>
+        <a class="card-router" [routerLink]="['/offer-work']">
           <mat-card>
-            <mat-card-header>
-              <mat-card-title><span>Oferta Trabajos</span></mat-card-title>
+            <mat-card-header class="card-title">
+              <mat-card-title><span>Ofertar Trabajos</span></mat-card-title>
             </mat-card-header>
             <img mat-card-image class="mat-card-image" src="../../../assets/img/create-job.jpeg"/>
             <mat-card-content>
               <p>dd</p>
             </mat-card-content>
           </mat-card>
-        </div>
+        </a>
       </div>
     </div>
   </div>
