@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Location } from '@angular/common';
 
 @Component({
   selector: 'app-recommends',
@@ -6,5 +7,8 @@ import { Component } from '@angular/core';
   styleUrls: ['./recommends.component.css']
 })
 export class RecommendsComponent {
-
+  constructor(private location: Location){
+  }
+  currentUrl:any = this.location.path();
+  id:Number = parseInt(this.currentUrl.split('/').pop());
 }

@@ -3,7 +3,7 @@
     <div class="body-container">
       <h1>Bienvenido a Financy, {{currentUser.name}}</h1>
       <div class="card-container">
-        <a class="card-router" [routerLink]="['/finances']">
+        <a class="card-router" [routerLink]="['/finances', id]">
           <mat-card [routerLink]="['/finances']">
             <mat-card-header class="card-title">
               <mat-card-title><span>Gestionar Finanzas</span></mat-card-title>
@@ -14,7 +14,7 @@
             </mat-card-content>
           </mat-card>
         </a>
-        <a class="card-router" [routerLink]="['/offer-work']" *ngIf="!empress">
+        <a class="card-router" [routerLink]="['/offer-work', id]" *ngIf="!empress">
           <mat-card>
             <mat-card-header class="card-title">
               <mat-card-title><span>Buscar Empleo</span></mat-card-title>
@@ -25,7 +25,7 @@
             </mat-card-content>
           </mat-card>
         </a>
-        <a class="card-router" [routerLink]="['/recommends']">
+        <a class="card-router" [routerLink]="['/recommends', id]">
           <mat-card>
             <mat-card-header class="card-title">
               <mat-card-title><span>Recomendaciones Financieras</span></mat-card-title>
@@ -36,7 +36,7 @@
             </mat-card-content>
           </mat-card>
         </a>
-        <a class="card-router" [routerLink]="['/offer-work']" *ngIf="empress">
+        <a class="card-router" [routerLink]="['/offer-work', id]" *ngIf="empress">
           <mat-card>
             <mat-card-header class="card-title">
               <mat-card-title><span>Ofertar Trabajos</span></mat-card-title>

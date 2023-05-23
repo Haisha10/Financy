@@ -6,6 +6,7 @@ import { MatPaginator } from '@angular/material/paginator';
 import { MatSort } from '@angular/material/sort';
 import { MatTableDataSource } from '@angular/material/table';
 import { FinancesCoreService } from '../services/finances-core.service';
+import { Location } from '@angular/common';
 
 @Component({
   selector: 'app-finances',
@@ -31,9 +32,12 @@ export class FinancesComponent implements OnInit {
   constructor(
     private _dialog: MatDialog,
     private _financesService: FinancesService,
-    private _coreService: FinancesCoreService
+    private _coreService: FinancesCoreService,
+    private location: Location
   ) {}
 
+  currentUrl:any = this.location.path();
+  id:Number = parseInt(this.currentUrl.split('/').pop());
   ngOnInit(): void {
     this.getFinanceList();
   }
