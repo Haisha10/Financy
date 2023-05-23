@@ -54,7 +54,7 @@ export class AuthService {
                 lastname: res[0].lastname
               }
               this._snackBar.openSnackBar("Inicio de sesión exitoso!");
-              this._router.navigate(['/menu']);
+              this._router.navigate(['/menu',res[0].id]);
             },
             error: console.log
           });

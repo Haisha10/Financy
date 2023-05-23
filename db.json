@@ -39,17 +39,19 @@
   ],
   "users": [
     {
-      "id": 1,
       "name": "Alvaro",
       "lastname": "Lamg",
       "email": "alvaro@upc.edu.pe",
-      "password": "alamg123"
+      "password": "alamg123",
+      "empress": true,
+      "id": 1
     },
     {
       "name": "Marcos",
       "lastname": "Olivos",
       "email": "marcos@upc.edu.pe",
       "password": "molivos123",
+      "empress": false,
       "id": 2
     },
     {
@@ -57,7 +59,16 @@
       "lastname": "Picon",
       "email": "xiomara@upc.edu.pe",
       "password": "xpicon123",
+      "empress": false,
       "id": 3
+    },
+    {
+      "name": "Alexandre",
+      "lastname": "Motta",
+      "email": "u20201c280@upc.edu.pe",
+      "password": "alexandre",
+      "empress": true,
+      "id": 4
     }
   ]
 }

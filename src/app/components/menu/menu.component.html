@@ -14,14 +14,14 @@
             </mat-card-content>
           </mat-card>
         </a>
-        <a class="card-router" [routerLink]="['/offer-work']">
+        <a class="card-router" [routerLink]="['/offer-work']" *ngIf="!empress">
           <mat-card>
             <mat-card-header class="card-title">
               <mat-card-title><span>Buscar Empleo</span></mat-card-title>
             </mat-card-header>
             <img mat-card-image class="mat-card-image" src="../../../assets/img/search-job.jpg"/>
             <mat-card-content>
-              <p>bb</p>
+              <p>En esta sección podrás postular a ofertas de trabajo publicadas por empresas relacionadas.</p>
             </mat-card-content>
           </mat-card>
         </a>
@@ -32,18 +32,18 @@
             </mat-card-header>
             <img mat-card-image class="mat-card-image" src="../../../assets/img/recommendations.jpg"/>
             <mat-card-content>
-              <p>cc</p>
+              <p>En esta sección recibirás información actualizada de maneras en que puedes manejar tus finanzas.</p>
             </mat-card-content>
           </mat-card>
         </a>
-        <a class="card-router" [routerLink]="['/offer-work']">
+        <a class="card-router" [routerLink]="['/offer-work']" *ngIf="empress">
           <mat-card>
             <mat-card-header class="card-title">
               <mat-card-title><span>Ofertar Trabajos</span></mat-card-title>
             </mat-card-header>
             <img mat-card-image class="mat-card-image" src="../../../assets/img/create-job.jpeg"/>
             <mat-card-content>
-              <p>dd</p>
+              <p>En esta sección podrás colocar tus ofertas de trabajo y esperar a ver las postulaciones de otros usuarios.</p>
             </mat-card-content>
           </mat-card>
         </a>

@@ -19,10 +19,10 @@ const routes: Routes = [
   { path: 'home', component: HomeComponent },
   { path: 'login', component: LoginComponent },
   { path: 'signup', component: SignupComponent },
-  { path: 'offer-work', component: OfferWorkComponent, canActivate: [AuthService]},
-  { path: 'finances', component: FinancesComponent, canActivate: [AuthService] },
-  { path: 'menu', component: MenuComponent, canActivate: [AuthService] },
-  { path: 'recommends', component: RecommendsComponent, canActivate: [AuthService] }
+  { path: 'offer-work/:id', component: OfferWorkComponent, canActivate: [AuthService]},
+  { path: 'finances/:id', component: FinancesComponent, canActivate: [AuthService] },
+  { path: 'menu/:id', component: MenuComponent, canActivate: [AuthService] },
+  { path: 'recommends/:id', component: RecommendsComponent, canActivate: [AuthService] }
 ];
 
 @NgModule({
