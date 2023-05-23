@@ -22,7 +22,7 @@
   font-weight: bolder;
   color: white;
   text-align: center;
-  padding-bottom: 2%;
+  padding-bottom: 1%;
 }
 
 .card-container {
@@ -43,20 +43,25 @@
 .card-title span {
   display: inline-block;
   vertical-align: middle;
-  font-size: 1.5em;
+  font-size: 1.3em;
   line-height: normal;
   font-weight: bold;
 }
 
 .mat-card-image {
-  width: auto;
+  width: 100%;
   height: auto;
-  padding-left: 5px;
-  padding-right: 5px;
+  max-height: 500px;
+  padding-left: 20px;
+  padding-right: 20px;
   padding-bottom: 2%;
 }
 
 .card-router {
   text-decoration: none;
   color: black;
+}
+
+.card-router:hover {
+  filter: brightness(0.8);
 }
