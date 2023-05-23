@@ -13,7 +13,7 @@ import { MatSlideToggleChange } from '@angular/material/slide-toggle';
   styleUrls: ['./signup.component.scss']
 })
 export class SignupComponent {
-  isEmpress: boolean = false;
+  isBusiness: boolean = false;
   isTermsChecked: boolean;
   isPasswordHide: boolean;
   isPasswordConfirmHide: boolean;
@@ -36,8 +36,8 @@ export class SignupComponent {
   checkTerm(event: MatCheckboxChange) {
     this.isTermsChecked = !this.isTermsChecked;
   }
-  onToggleChange(event:MatSlideToggleChange) {
-      this.isEmpress=true;
+  onToggleChange(event: MatSlideToggleChange) {
+    this.isBusiness = true;
   }
   signup() {
     if (!this.signupForm.valid) {
@@ -52,25 +52,14 @@ export class SignupComponent {
       this._snackBar.openSnackBar("Las contraseñas no coinciden. Vuelva a intentarlo.");
       return;
     }
-    let user:any;
-    if(this.isEmpress==true){
-      user = {
+    let user: any;
+    user = {
       name: this.signupForm.value.name,
       lastname: this.signupForm.value.lastname,
       email: this.signupForm.value.email,
       password: this.signupForm.value.password,
-      empress: true
+      business: this.isBusiness
     };
-    }
-    else{
-      user = {
-        name: this.signupForm.value.name,
-        lastname: this.signupForm.value.lastname,
-        email: this.signupForm.value.email,
-        password: this.signupForm.value.password,
-        empress: false
-      };
-    }
     this._authService.signup(user);
   }
 }

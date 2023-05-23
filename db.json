@@ -43,7 +43,7 @@
       "lastname": "Lamg",
       "email": "alvaro@upc.edu.pe",
       "password": "alamg123",
-      "empress": true,
+      "business": true,
       "id": 1
     },
     {
@@ -51,7 +51,7 @@
       "lastname": "Olivos",
       "email": "marcos@upc.edu.pe",
       "password": "molivos123",
-      "empress": false,
+      "business": false,
       "id": 2
     },
     {
@@ -59,7 +59,7 @@
       "lastname": "Picon",
       "email": "xiomara@upc.edu.pe",
       "password": "xpicon123",
-      "empress": false,
+      "business": false,
       "id": 3
     },
     {
@@ -67,7 +67,7 @@
       "lastname": "Motta",
       "email": "u20201c280@upc.edu.pe",
       "password": "alexandre",
-      "empress": true,
+      "business": true,
       "id": 4
     }
   ]

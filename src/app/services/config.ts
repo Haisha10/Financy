@@ -1,1 +1,3 @@
-export const API_URL = 'https://my-json-server.typicode.com/Haisha10/Financy';
+export const API_URL = 'http://localhost:3000';
+
+//'https://my-json-server.typicode.com/Haisha10/Financy'

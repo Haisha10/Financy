@@ -5,7 +5,6 @@ import {MatPaginator} from '@angular/material/paginator';
 import {MatSort} from '@angular/material/sort';
 import {MatTableDataSource} from '@angular/material/table';
 import { CreateWorkComponent } from '../create-work/create-work.component';
-import { Location } from '@angular/common';
 
 @Component({
   selector: 'app-root',
@@ -22,12 +21,10 @@ export class OfferWorkComponent implements OnInit{
   @ViewChild(MatSort) sort!: MatSort;
 
 
-  constructor(private dialog : MatDialog, private api : ApiService, private location: Location){
+  constructor(private dialog : MatDialog, private api : ApiService){
 
   }
 
-  currentUrl:any = this.location.path();
-  id:Number = parseInt(this.currentUrl.split('/').pop());
   ngOnInit(): void {
     this.getAllProducts();
   }

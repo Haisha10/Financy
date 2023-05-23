@@ -51,10 +51,11 @@ export class AuthService {
               this.loggedUser = {
                 id: res[0].id,
                 name: res[0].name,
-                lastname: res[0].lastname
+                lastname: res[0].lastname,
+                business: res[0].business
               }
               this._snackBar.openSnackBar("Inicio de sesión exitoso!");
-              this._router.navigate(['/menu',res[0].id]);
+              this._router.navigate(['/menu']);
             },
             error: console.log
           });

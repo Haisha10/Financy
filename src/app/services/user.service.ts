@@ -25,17 +25,6 @@ export class UserService {
     });
   }
 
-  checkEmpress(id: Number): Observable<boolean> {
-    return this.http.get<any>(`${this.baseUrl}/users/${id}`)
-      .pipe(
-        map(response => response.empress)
-      );
-  }
-
-  getUser(): Observable<User[]> {
-    return this.http.get<User[]>(`${this.baseUrl}/users`);
-  }
-
   checkUserExists(email: string): Observable<boolean> {
     return this.http.get<any[]>(`${this.baseUrl}/users`, {
       params: new HttpParams().set('email', email)
