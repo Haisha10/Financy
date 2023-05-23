@@ -5,7 +5,7 @@ import { UserService } from './user.service';
 import { SnackBarService } from './snack-bar.service';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class AuthService {
   isLoggedIn = false;
@@ -15,25 +15,27 @@ export class AuthService {
     private _userService: UserService,
     private _router: Router,
     private _snackBar: SnackBarService
-  ) { }
+  ) {}
 
   signup(user: any): void {
     this._userService.checkUserExists(user.email).subscribe({
       next: (userExists) => {
         if (userExists) {
-          this._snackBar.openSnackBar("Ya existe una cuenta registrada con este correo.");
+          this._snackBar.openSnackBar(
+            'Ya existe una cuenta registrada con este correo.'
+          );
           return;
         } else {
           this._userService.signup(user).subscribe({
             next: (res) => {
-              this._snackBar.openSnackBar("Registro exitoso!");
+              this._snackBar.openSnackBar('Registro exitoso!');
               this._router.navigate(['/login']);
             },
-            error: console.log
+            error: console.log,
           });
         }
       },
-      error: console.log
+      error: console.log,
     });
   }
 
@@ -44,7 +46,9 @@ export class AuthService {
           this._userService.login(credentials).subscribe({
             next: (res) => {
               if (res.length < 1) {
-                this._snackBar.openSnackBar("Correo electrónico o contraseña incorrecta.");
+                this._snackBar.openSnackBar(
+                  'Correo electrónico o contraseña incorrecta.'
+                );
                 return;
               }
               this.isLoggedIn = true;
@@ -52,22 +56,23 @@ export class AuthService {
                 id: res[0].id,
                 name: res[0].name,
                 lastname: res[0].lastname,
-                business: res[0].business
-              }
-              this._snackBar.openSnackBar("Inicio de sesión exitoso!");
+                business: res[0].business,
+              };
+              this._snackBar.openSnackBar('Inicio de sesión exitoso!');
               this._router.navigate(['/menu']);
             },
-            error: console.log
+            error: console.log,
           });
         } else {
-          this._snackBar.openSnackBar("Correo electrónico o contraseña incorrecta.");
+          this._snackBar.openSnackBar(
+            'Hay un problema con el servidor. Intente más tarde.'
+          );
           return;
         }
       },
-      error: console.log
+      error: console.log,
       // Handle error
-    }
-    );
+    });
   }
 
   logout(): void {
