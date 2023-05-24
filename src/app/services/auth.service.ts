@@ -1,4 +1,4 @@
-import { Injectable } from '@angular/core';
+import { Injectable, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 
 import { UserService } from './user.service';
@@ -15,7 +15,13 @@ export class AuthService {
     private _userService: UserService,
     private _router: Router,
     private _snackBar: SnackBarService
-  ) {}
+  ) {
+    const storedUser = localStorage.getItem('loggedUser');
+    if (storedUser) {
+      this.isLoggedIn = true;
+      this.loggedUser = JSON.parse(storedUser);
+    }
+  }
 
   signup(user: any): void {
     this._userService.checkUserExists(user.email).subscribe({
@@ -58,6 +64,7 @@ export class AuthService {
                 lastname: res[0].lastname,
                 business: res[0].business,
               };
+              localStorage.setItem('loggedUser', JSON.stringify(this.loggedUser));
               this._snackBar.openSnackBar('Inicio de sesión exitoso!');
               this._router.navigate(['/menu']);
             },
@@ -78,11 +85,12 @@ export class AuthService {
   logout(): void {
     this.isLoggedIn = false;
     this.loggedUser = null;
+    localStorage.removeItem('loggedUser');
     this._router.navigate(['/login']);
   }
 
   canActivate(): boolean {
-    if (this.isLoggedIn) {
+    if (this.isLoggedIn || this.loggedUser) {
       return true;
     } else {
       this._router.navigate(['/login']);

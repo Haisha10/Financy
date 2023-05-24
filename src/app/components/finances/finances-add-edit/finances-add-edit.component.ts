@@ -1,8 +1,8 @@
 import { Component, Inject, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
 import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
-import { FinancesCoreService } from '../services/finances-core.service';
-import { FinancesService } from '../services/finances.service';
+import { SnackBarService } from 'src/app/services/snack-bar.service';
+import { FinancesService } from 'src/app/services/finances.service';
 
 @Component({
   selector: 'app-finances-add-edit',
@@ -22,7 +22,7 @@ export class FinancesAddEditComponent implements OnInit {
     private _financesService: FinancesService,
     private _dialogRef: MatDialogRef<FinancesAddEditComponent>,
     @Inject(MAT_DIALOG_DATA) public data: any,
-    private _coreService: FinancesCoreService
+    private _snackBar: SnackBarService
   ) {
     this.financesForm = this._fb.group({
       type: '',
@@ -44,7 +44,7 @@ export class FinancesAddEditComponent implements OnInit {
           .updateFinance(this.data.id, this.financesForm.value)
           .subscribe({
             next: (val: any) => {
-              this._coreService.openSnackBar(`${this.data.type} actualizado`);
+              this._snackBar.openSnackBar(`${this.data.type} actualizado`);
               this._dialogRef.close(true);
             },
             error: (err: any) => {
@@ -54,7 +54,7 @@ export class FinancesAddEditComponent implements OnInit {
       } else {
         this._financesService.addFinance(this.financesForm.value).subscribe({
           next: (val: any) => {
-            this._coreService.openSnackBar(`${this.data.type} añadido`);
+            this._snackBar.openSnackBar(`${this.data.type} añadido`);
             this._dialogRef.close(true);
           },
           error: (err: any) => {

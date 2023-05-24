@@ -1,18 +1,18 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { FinancesAddEditComponent } from '../finances-add-edit/finances-add-edit.component';
-import { FinancesService } from '../services/finances.service';
+import { FinancesService } from '../../../services/finances.service';
 import { MatPaginator } from '@angular/material/paginator';
 import { MatSort } from '@angular/material/sort';
 import { MatTableDataSource } from '@angular/material/table';
-import { FinancesCoreService } from '../services/finances-core.service';
+import { SnackBarService } from 'src/app/services/snack-bar.service';
 
 @Component({
-  selector: 'app-finances',
-  templateUrl: './finances.component.html',
-  styleUrls: ['./finances.component.scss']
+  selector: 'app-finances-list',
+  templateUrl: './finances-list.component.html',
+  styleUrls: ['./finances-list.component.scss']
 })
-export class FinancesComponent implements OnInit {
+export class FinancesListComponent implements OnInit {
   displayedColumns: string[] = [
     'id',
     'type',
@@ -31,7 +31,7 @@ export class FinancesComponent implements OnInit {
   constructor(
     private _dialog: MatDialog,
     private _financesService: FinancesService,
-    private _coreService: FinancesCoreService
+    private _snackBar: SnackBarService
   ) {}
 
   ngOnInit(): void {
@@ -72,7 +72,7 @@ export class FinancesComponent implements OnInit {
   deleteFinance(id: number) {
     this._financesService.deleteFinance(id).subscribe({
       next: (res) => {
-        this._coreService.openSnackBar('Eliminado.', 'done');
+        this._snackBar.openSnackBar('Eliminado.');
         this.getFinanceList();
       },
       error: console.log,

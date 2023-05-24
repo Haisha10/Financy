@@ -13,7 +13,7 @@ import { MatSlideToggleChange } from '@angular/material/slide-toggle';
   styleUrls: ['./signup.component.scss']
 })
 export class SignupComponent {
-  isBusiness: boolean = false;
+  isBusiness: boolean;
   isTermsChecked: boolean;
   isPasswordHide: boolean;
   isPasswordConfirmHide: boolean;
@@ -22,6 +22,7 @@ export class SignupComponent {
     private _authService: AuthService,
     private _snackBar: SnackBarService
   ) {
+    this.isBusiness = false
     this.isTermsChecked = false;
     this.isPasswordHide = true;
     this.isPasswordConfirmHide = true;
@@ -37,7 +38,7 @@ export class SignupComponent {
     this.isTermsChecked = !this.isTermsChecked;
   }
   onToggleChange(event: MatSlideToggleChange) {
-    this.isBusiness = true;
+    this.isBusiness = !this.isBusiness;
   }
   signup() {
     if (!this.signupForm.valid) {

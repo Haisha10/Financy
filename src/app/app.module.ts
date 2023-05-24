@@ -11,6 +11,8 @@ import { LoginComponent } from './components/user/login/login.component';
 import { SignupComponent } from './components/user/signup/signup.component';
 import { ToolBarComponent } from './components/tool-bar/tool-bar.component';
 import { MenuComponent } from './components/menu/menu.component';
+import { FinancesListComponent } from './components/finances/finances-list/finances-list.component';
+import { FinancesAddEditComponent } from './components/finances/finances-add-edit/finances-add-edit.component';
 
 // Material Import
 import { MatToolbarModule } from '@angular/material/toolbar';
@@ -34,8 +36,6 @@ import { MatSelectModule } from '@angular/material/select';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 
-import { FinancesComponent } from './finances/finances.component';
-import { FinancesAddEditComponent } from './finances-add-edit/finances-add-edit.component';
 import { OfferWorkComponent } from './offer-work/offer-work.component';
 import { MatDatepickerModule } from '@angular/material/datepicker';
 import { MatNativeDateModule } from '@angular/material/core';
@@ -50,7 +50,7 @@ import { RecommendsComponent } from './recommends/recommends.component';
     SignupComponent,
     ToolBarComponent,
     MenuComponent,
-    FinancesComponent,
+    FinancesListComponent,
     FinancesAddEditComponent,
     OfferWorkComponent,
     CreateWorkComponent,
