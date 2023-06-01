@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import { LOCALE_ID, NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
@@ -13,6 +13,8 @@ import { ToolBarComponent } from './components/tool-bar/tool-bar.component';
 import { MenuComponent } from './components/menu/menu.component';
 import { FinancesListComponent } from './components/finances/finances-list/finances-list.component';
 import { FinancesAddEditComponent } from './components/finances/finances-add-edit/finances-add-edit.component';
+
+import { TipsComponent } from './components/tips/tips.component';
 
 // Material Import
 import { MatToolbarModule } from '@angular/material/toolbar';
@@ -40,7 +42,13 @@ import { OfferWorkComponent } from './offer-work/offer-work.component';
 import { MatDatepickerModule } from '@angular/material/datepicker';
 import { MatNativeDateModule } from '@angular/material/core';
 import { CreateWorkComponent } from './create-work/create-work.component';
-import { RecommendsComponent } from './recommends/recommends.component';
+
+import locales from '@angular/common/locales/es-PE';
+import { registerLocaleData } from '@angular/common';
+import { EmploymentListComponent } from './components/employment/employment-list/employment-list.component';
+import { EmploymentAddEditComponent } from './components/employment/employment-add-edit/employment-add-edit.component';
+
+registerLocaleData(locales, 'es-PE');
 
 @NgModule({
   declarations: [
@@ -54,7 +62,9 @@ import { RecommendsComponent } from './recommends/recommends.component';
     FinancesAddEditComponent,
     OfferWorkComponent,
     CreateWorkComponent,
-    RecommendsComponent
+    EmploymentListComponent,
+    EmploymentAddEditComponent,
+    TipsComponent
   ],
   imports: [
     BrowserModule,
@@ -83,7 +93,7 @@ import { RecommendsComponent } from './recommends/recommends.component';
     MatDatepickerModule,
     MatNativeDateModule
   ],
-  providers: [],
+  providers: [{ provide: LOCALE_ID, useValue: 'es-PE' }],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

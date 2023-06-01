@@ -1,31 +1,76 @@
 {
   "finances": [
     {
-      "id": 1,
-      "type": "Ingreso",
+      "isIncome": true,
       "date": "2023-05-01T12:09:39Z",
       "name": "Planilla",
       "exchange": 1025,
-      "balance": 1025,
-      "comment": "Sin gratificacion"
+      "comment": "Sin gratificaciona",
+      "id": 1
     },
     {
-      "type": "Salida",
-      "date": "2023-05-03T05:00:00.000Z",
-      "name": "Luz",
-      "exchange": 350,
-      "balance": 675,
-      "comment": "",
-      "id": 2
-    },
-    {
-      "type": "Salida",
+      "isIncome": false,
       "date": "2023-05-05T12:09:39Z",
       "name": "Agua",
       "exchange": 200,
-      "balance": 475,
       "comment": "Reclamar subida de costo",
       "id": 3
+    },
+    {
+      "isIncome": true,
+      "date": "2023-05-02T05:00:00.000Z",
+      "name": "asda",
+      "exchange": 234,
+      "comment": "asdad",
+      "id": 4
+    },
+    {
+      "isIncome": false,
+      "date": "2023-05-19T05:00:00.000Z",
+      "name": "asdasda",
+      "exchange": 100,
+      "comment": "fdgdfg",
+      "id": 5
+    },
+    {
+      "isIncome": true,
+      "date": "2023-05-11T05:00:00.000Z",
+      "name": "A",
+      "exchange": 123455,
+      "comment": "asdad",
+      "id": 6
+    },
+    {
+      "isIncome": true,
+      "date": "2023-08-10T05:00:00.000Z",
+      "name": "sadasfd",
+      "exchange": 54354,
+      "comment": "vcxxcvxcv",
+      "id": 7
+    },
+    {
+      "isIncome": false,
+      "date": "2023-05-04T05:00:00.000Z",
+      "name": "asdsad",
+      "exchange": 23123,
+      "comment": "dadad",
+      "id": 8
+    },
+    {
+      "isIncome": false,
+      "date": "2023-05-13T05:00:00.000Z",
+      "name": "ASDASD",
+      "exchange": 2145678,
+      "comment": "dfsdfsd",
+      "id": 9
+    },
+    {
+      "isIncome": true,
+      "date": "2023-03-07T05:00:00.000Z",
+      "name": "asdasd",
+      "exchange": 2135,
+      "comment": "a",
+      "id": 10
     }
   ],
   "productList": [

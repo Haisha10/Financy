@@ -7,12 +7,12 @@ import { LoginComponent } from './components/user/login/login.component';
 import { SignupComponent } from './components/user/signup/signup.component';
 import { MenuComponent } from './components/menu/menu.component';
 import { FinancesListComponent } from './components/finances/finances-list/finances-list.component';
+import { TipsComponent } from './components/tips/tips.component';
 
 // Services Import
 import { AuthService } from './services/auth.service';
 
 import { OfferWorkComponent } from './offer-work/offer-work.component'
-import { RecommendsComponent } from './recommends/recommends.component';
 
 const routes: Routes = [
   { path: '', redirectTo: '/home', pathMatch: 'full' },
@@ -22,7 +22,7 @@ const routes: Routes = [
   { path: 'offer-work', component: OfferWorkComponent, canActivate: [AuthService] },
   { path: 'finances', component: FinancesListComponent, canActivate: [AuthService] },
   { path: 'menu', component: MenuComponent, canActivate: [AuthService] },
-  { path: 'recommends', component: RecommendsComponent, canActivate: [AuthService] }
+  { path: 'tips', component: TipsComponent, canActivate: [AuthService] }
 ];
 
 @NgModule({

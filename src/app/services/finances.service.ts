@@ -2,21 +2,26 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 
+import { Finance } from '../models/finance.model';
+
+import { environment } from './environment';
+
 @Injectable({
   providedIn: 'root'
 })
 export class FinancesService {
+  private baseUrl = environment.base_url;
   constructor(private _http: HttpClient) {}
-  addFinance(data: any): Observable<any> {
-    return this._http.post('https://my-json-server.typicode.com/Haisha10/Financy/finances', data);
+  addFinance(data: any): Observable<Finance> {
+    return this._http.post<Finance>(`${this.baseUrl}/finances`, data);
   }
-  updateFinance(id: number, data: any): Observable<any> {
-    return this._http.put(`https://my-json-server.typicode.com/Haisha10/Financy/finances/${id}`, data);
+  updateFinance(id: number, data: Finance): Observable<Finance> {
+    return this._http.put<Finance>(`${this.baseUrl}/finances/${id}`, data);
   }
-  getFinanceList(): Observable<any> {
-    return this._http.get('https://my-json-server.typicode.com/Haisha10/Financy/finances');
+  getFinanceList(): Observable<Finance[]> {
+    return this._http.get<Finance[]>(`${this.baseUrl}/finances`);
   }
-  deleteFinance(id: number): Observable<any> {
-    return this._http.delete(`https://my-json-server.typicode.com/Haisha10/Financy/finances/${id}`);
+  deleteFinance(id: number): Observable<Finance> {
+    return this._http.delete<Finance>(`${this.baseUrl}/finances/${id}`);
   }
 }

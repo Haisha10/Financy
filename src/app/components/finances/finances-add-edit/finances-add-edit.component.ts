@@ -1,5 +1,5 @@
 import { Component, Inject, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup } from '@angular/forms';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
 import { SnackBarService } from 'src/app/services/snack-bar.service';
 import { FinancesService } from 'src/app/services/finances.service';
@@ -12,11 +12,6 @@ import { FinancesService } from 'src/app/services/finances.service';
 export class FinancesAddEditComponent implements OnInit {
   financesForm: FormGroup;
 
-  type_values: string[] = [
-    'Ingreso',
-    'Salida'
-  ];
-
   constructor(
     private _fb: FormBuilder,
     private _financesService: FinancesService,
@@ -25,11 +20,11 @@ export class FinancesAddEditComponent implements OnInit {
     private _snackBar: SnackBarService
   ) {
     this.financesForm = this._fb.group({
-      type: '',
-      date: '',
-      name: '',
-      exchange: '',
-      comment: ''
+      isIncome: [true],
+      date: ['', Validators.required],
+      name: ['', Validators.required],
+      exchange: ['', Validators.required],
+      comment: ['', Validators.maxLength(100)]
     });
   }
 
@@ -44,8 +39,8 @@ export class FinancesAddEditComponent implements OnInit {
           .updateFinance(this.data.id, this.financesForm.value)
           .subscribe({
             next: (val: any) => {
-              this._snackBar.openSnackBar(`${this.data.type} actualizado`);
               this._dialogRef.close(true);
+              this._snackBar.openSnackBar(`${this.data.isIncome ? 'Ingreso' : 'Salida'} actualizado`);
             },
             error: (err: any) => {
               console.error(err);
@@ -54,8 +49,8 @@ export class FinancesAddEditComponent implements OnInit {
       } else {
         this._financesService.addFinance(this.financesForm.value).subscribe({
           next: (val: any) => {
-            this._snackBar.openSnackBar(`${this.data.type} añadido`);
             this._dialogRef.close(true);
+            this._snackBar.openSnackBar(`${this.data.isIncome  ? 'Ingreso' : 'Salida'} añadido`);
           },
           error: (err: any) => {
             console.error(err);

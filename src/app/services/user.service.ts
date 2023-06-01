@@ -5,13 +5,13 @@ import { map, catchError } from 'rxjs/operators';
 
 import { User } from '../models/user.model';
 
-import { API_URL } from './config';
+import { environment } from './environment';
 
 @Injectable({
   providedIn: 'root'
 })
 export class UserService {
-  private baseUrl = API_URL;
+  private baseUrl = environment.base_url;
 
   constructor(private http: HttpClient) { }
 

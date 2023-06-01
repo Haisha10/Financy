@@ -6,6 +6,7 @@ import { MatPaginator } from '@angular/material/paginator';
 import { MatSort } from '@angular/material/sort';
 import { MatTableDataSource } from '@angular/material/table';
 import { SnackBarService } from 'src/app/services/snack-bar.service';
+import { Finance } from 'src/app/models/finance.model';
 
 @Component({
   selector: 'app-finances-list',
@@ -13,13 +14,13 @@ import { SnackBarService } from 'src/app/services/snack-bar.service';
   styleUrls: ['./finances-list.component.scss']
 })
 export class FinancesListComponent implements OnInit {
+  balance: number = 0;
   displayedColumns: string[] = [
     'id',
-    'type',
+    'isIncome',
     'date',
     'name',
     'exchange',
-    'balance',
     'comment',
     'action'
   ];
@@ -32,7 +33,7 @@ export class FinancesListComponent implements OnInit {
     private _dialog: MatDialog,
     private _financesService: FinancesService,
     private _snackBar: SnackBarService
-  ) {}
+  ) { }
 
   ngOnInit(): void {
     this.getFinanceList();
@@ -55,6 +56,10 @@ export class FinancesListComponent implements OnInit {
         this.dataSource = new MatTableDataSource(res);
         this.dataSource.sort = this.sort;
         this.dataSource.paginator = this.paginator;
+        this.balance = 0
+        res.forEach((element: Finance) => {
+          this.balance += element.exchange;
+        });
       },
       error: console.log,
     });
@@ -79,7 +84,7 @@ export class FinancesListComponent implements OnInit {
     });
   }
 
-  openEditForm(data: any) {
+  openEditForm(data: Finance) {
     const dialogRef = this._dialog.open(FinancesAddEditComponent, {
       data,
     });
