@@ -59,7 +59,7 @@ export class SignupComponent {
       lastname: this.signupForm.value.lastname,
       email: this.signupForm.value.email,
       password: this.signupForm.value.password,
-      business: this.isBusiness
+      isBusiness: this.isBusiness
     };
     this._authService.signup(user);
   }

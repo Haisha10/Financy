@@ -47,6 +47,8 @@ import locales from '@angular/common/locales/es-PE';
 import { registerLocaleData } from '@angular/common';
 import { EmploymentListComponent } from './components/employment/employment-list/employment-list.component';
 import { EmploymentAddEditComponent } from './components/employment/employment-add-edit/employment-add-edit.component';
+import { EmploymentOverviewComponent } from './components/employment/employment-overview/employment-overview.component';
+import { EmploymentViewComponent } from './components/employment/employment-view/employment-view.component';
 
 registerLocaleData(locales, 'es-PE');
 
@@ -64,7 +66,9 @@ registerLocaleData(locales, 'es-PE');
     CreateWorkComponent,
     EmploymentListComponent,
     EmploymentAddEditComponent,
-    TipsComponent
+    TipsComponent,
+    EmploymentOverviewComponent,
+    EmploymentViewComponent
   ],
   imports: [
     BrowserModule,

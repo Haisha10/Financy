@@ -62,7 +62,7 @@ export class AuthService {
                 id: res[0].id,
                 name: res[0].name,
                 lastname: res[0].lastname,
-                business: res[0].business,
+                isBusiness: res[0].isBusiness,
               };
               localStorage.setItem('loggedUser', JSON.stringify(this.loggedUser));
               this._snackBar.openSnackBar('Inicio de sesión exitoso!');

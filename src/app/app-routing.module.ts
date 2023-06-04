@@ -8,18 +8,19 @@ import { SignupComponent } from './components/user/signup/signup.component';
 import { MenuComponent } from './components/menu/menu.component';
 import { FinancesListComponent } from './components/finances/finances-list/finances-list.component';
 import { TipsComponent } from './components/tips/tips.component';
+import { EmploymentListComponent } from './components/employment/employment-list/employment-list.component';
+import { EmploymentAddEditComponent } from './components/employment/employment-add-edit/employment-add-edit.component';
 
 // Services Import
 import { AuthService } from './services/auth.service';
-
-import { OfferWorkComponent } from './offer-work/offer-work.component'
 
 const routes: Routes = [
   { path: '', redirectTo: '/home', pathMatch: 'full' },
   { path: 'home', component: HomeComponent },
   { path: 'login', component: LoginComponent },
   { path: 'signup', component: SignupComponent },
-  { path: 'offer-work', component: OfferWorkComponent, canActivate: [AuthService] },
+  { path: 'employment/list', component: EmploymentListComponent, canActivate: [AuthService] },
+  { path: 'employment/view', component: EmploymentListComponent, canActivate: [AuthService] },
   { path: 'finances', component: FinancesListComponent, canActivate: [AuthService] },
   { path: 'menu', component: MenuComponent, canActivate: [AuthService] },
   { path: 'tips', component: TipsComponent, canActivate: [AuthService] }

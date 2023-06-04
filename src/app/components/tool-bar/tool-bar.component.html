@@ -19,23 +19,23 @@
       <mat-icon id="user-icon">account_circle</mat-icon>
       <h1>{{ currentUser.name }} {{ currentUser.lastname }}</h1>
 
-      <a mat-list-item routerLink="/menu">
+      <a mat-list-item [routerLink]="['/menu']">
         <mat-icon class="mat-icon-inline">home</mat-icon>
         <span>Inicio</span>
       </a>
-      <a mat-list-item routerLink="/finances">
+      <a mat-list-item [routerLink]="['/finances']">
         <mat-icon class="mat-icon-inline">attach_money</mat-icon>
         <span>Gestionar Finanzas</span>
       </a>
-      <a mat-list-item routerLink="/offer-work">
+      <a mat-list-item [routerLink]="['/emplyment/view']" *ngIf="!currentUser.isBusiness">
         <mat-icon class="mat-icon-inline">work</mat-icon>
         <span>Buscar Empleo</span>
       </a>
-      <a mat-list-item routerLink="/recommends">
+      <a mat-list-item [routerLink]="['/tips']">
         <mat-icon class="mat-icon-inline">lightbulb</mat-icon>
         <span>Recomendaciones</span>
       </a>
-      <a mat-list-item routerLink="/offer-work">
+      <a mat-list-item [routerLink]="['/employment/list']" *ngIf="currentUser.isBusiness">
         <mat-icon class="mat-icon-inline">business</mat-icon>
         <span>Ofertar Trabajos</span>
       </a>

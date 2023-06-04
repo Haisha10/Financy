@@ -23,63 +23,22 @@
       "exchange": 234,
       "comment": "asdad",
       "id": 4
-    },
-    {
-      "isIncome": false,
-      "date": "2023-05-19T05:00:00.000Z",
-      "name": "asdasda",
-      "exchange": 100,
-      "comment": "fdgdfg",
-      "id": 5
-    },
-    {
-      "isIncome": true,
-      "date": "2023-05-11T05:00:00.000Z",
-      "name": "A",
-      "exchange": 123455,
-      "comment": "asdad",
-      "id": 6
-    },
-    {
-      "isIncome": true,
-      "date": "2023-08-10T05:00:00.000Z",
-      "name": "sadasfd",
-      "exchange": 54354,
-      "comment": "vcxxcvxcv",
-      "id": 7
-    },
-    {
-      "isIncome": false,
-      "date": "2023-05-04T05:00:00.000Z",
-      "name": "asdsad",
-      "exchange": 23123,
-      "comment": "dadad",
-      "id": 8
-    },
-    {
-      "isIncome": false,
-      "date": "2023-05-13T05:00:00.000Z",
-      "name": "ASDASD",
-      "exchange": 2145678,
-      "comment": "dfsdfsd",
-      "id": 9
-    },
-    {
-      "isIncome": true,
-      "date": "2023-03-07T05:00:00.000Z",
-      "name": "asdasd",
-      "exchange": 2135,
-      "comment": "a",
-      "id": 10
     }
   ],
-  "productList": [
+  "employments": [
     {
       "id": 1,
-      "Nombre": "UPC",
-      "Puesto": "Profesor",
-      "Salario": 7000,
-      "Requisitos": "Ser graduado con post-grado y 5 años de experiencia"
+      "ruc": "20123456789",
+      "name": "UPC",
+      "description": "Profesor de Ciencias",
+      "creationDate": "2023-06-01T12:09:39Z",
+      "address": "Av. Salaverry 123",
+      "phone": "987654321",
+      "email": "administracion@upc.edu.pe",
+      "requirements": "Master en Ciencias",
+      "salary": 3000,
+      "isAvailable": true,
+      "postulants": [1, 2, 3]
     }
   ],
   "users": [
@@ -88,7 +47,7 @@
       "lastname": "Lamg",
       "email": "alvaro@upc.edu.pe",
       "password": "alamg123",
-      "business": true,
+      "isBusiness": true,
       "id": 1
     },
     {
@@ -96,7 +55,7 @@
       "lastname": "Olivos",
       "email": "marcos@upc.edu.pe",
       "password": "molivos123",
-      "business": false,
+      "isBusiness": false,
       "id": 2
     },
     {
@@ -104,7 +63,7 @@
       "lastname": "Picon",
       "email": "xiomara@upc.edu.pe",
       "password": "xpicon123",
-      "business": false,
+      "isBusiness": false,
       "id": 3
     },
     {
@@ -112,8 +71,16 @@
       "lastname": "Motta",
       "email": "u20201c280@upc.edu.pe",
       "password": "alexandre",
-      "business": true,
+      "isBusiness": true,
       "id": 4
+    },
+    {
+      "name": "Hiram",
+      "lastname": "Rojas",
+      "email": "hiram@upc.edu.pe",
+      "password": "hrojas123",
+      "isBusiness": true,
+      "id": 5
     }
   ]
 }

@@ -14,7 +14,7 @@
             </mat-card-content>
           </mat-card>
         </a>
-        <a class="card-router" [routerLink]="['/offer-work']" *ngIf="!currentUser.business">
+        <a class="card-router" [routerLink]="['/employment/list']" *ngIf="!currentUser.isBusiness">
           <mat-card>
             <mat-card-header class="card-title">
               <mat-card-title><span>Buscar Empleo</span></mat-card-title>
@@ -36,7 +36,7 @@
             </mat-card-content>
           </mat-card>
         </a>
-        <a class="card-router" [routerLink]="['/offer-work']" *ngIf="currentUser.business">
+        <a class="card-router" [routerLink]="['/employment/view']" *ngIf="currentUser.isBusiness">
           <mat-card>
             <mat-card-header class="card-title">
               <mat-card-title><span>Ofertar Trabajos</span></mat-card-title>
