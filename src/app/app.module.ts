@@ -38,10 +38,8 @@ import { MatSelectModule } from '@angular/material/select';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 
-import { OfferWorkComponent } from './offer-work/offer-work.component';
 import { MatDatepickerModule } from '@angular/material/datepicker';
 import { MatNativeDateModule } from '@angular/material/core';
-import { CreateWorkComponent } from './create-work/create-work.component';
 
 import locales from '@angular/common/locales/es-PE';
 import { registerLocaleData } from '@angular/common';
@@ -62,8 +60,6 @@ registerLocaleData(locales, 'es-PE');
     MenuComponent,
     FinancesListComponent,
     FinancesAddEditComponent,
-    OfferWorkComponent,
-    CreateWorkComponent,
     EmploymentListComponent,
     EmploymentAddEditComponent,
     TipsComponent,
