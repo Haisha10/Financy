@@ -33,7 +33,7 @@
       "description": "Profesor de Ciencias",
       "creationDate": "2023-06-01T12:09:39Z",
       "address": "Av. Salaverry 123",
-      "phone": "987654321",
+      "phone": 987654321,
       "email": "administracion@upc.edu.pe",
       "requirements": "Master en Ciencias",
       "salary": 3000,

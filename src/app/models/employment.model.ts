@@ -5,10 +5,10 @@ export interface Employment {
   description: String;
   creationDate: Date;
   address: String;
-  phone: String;
+  phone: number;
   email: String;
   requirements: String;
   salary: number;
   isAvailable: boolean;
-  postuants: number[];
+  postulants: number[];
 }
