@@ -1,9 +1,9 @@
 export const environment = {
   production: false,
-  base_url: 'http://localhost:3000'
+  base_url: 'https://my-json-server.typicode.com/Haisha10/Financy'
 };
 
-//'https://my-json-server.typicode.com/Haisha10/Financy'
+//'http://localhost:3000'
 
 /*
 export const environment = {
