@@ -13,7 +13,7 @@ import { MatSlideToggleChange } from '@angular/material/slide-toggle';
   styleUrls: ['./signup.component.scss']
 })
 export class SignupComponent {
-  isBusiness: boolean;
+  isBusiness: boolean = false;
   isTermsChecked: boolean;
   isPasswordHide: boolean;
   isPasswordConfirmHide: boolean;
