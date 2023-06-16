@@ -2,7 +2,7 @@ import { Component, Inject, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
 import { SnackBarService } from 'src/app/services/snack-bar.service';
-import { FinancesService } from 'src/app/services/finances.service';
+import { EmploymentsService } from 'src/app/services/employments.service';
 
 @Component({
   selector: 'app-employment-add-edit',
@@ -10,33 +10,34 @@ import { FinancesService } from 'src/app/services/finances.service';
   styleUrls: ['./employment-add-edit.component.scss']
 })
 export class EmploymentAddEditComponent {
-  financesForm: FormGroup;
+  employmentForm: FormGroup;
 
   constructor(
     private _fb: FormBuilder,
-    private _financesService: FinancesService,
+    private _employmentsService: EmploymentsService,
     private _dialogRef: MatDialogRef<EmploymentAddEditComponent>,
     @Inject(MAT_DIALOG_DATA) public data: any,
-    private _snackBar: SnackBarService
+    private _snackBar: SnackBarService,
   ) {
-    this.financesForm = this._fb.group({
-      isIncome: [true],
-      date: ['', Validators.required],
-      name: ['', Validators.required],
-      exchange: ['', Validators.required],
-      comment: ['', Validators.maxLength(100)]
+    this.employmentForm = this._fb.group({
+      ruc: ['', [Validators.required, Validators.minLength(11), Validators.maxLength(11)]],
+      name: ['', [Validators.required, Validators.minLength(3), Validators.maxLength(50)]],
+      description: ['', Validators.required],
+      requirements: ['', Validators.required],
+      creationDate: ['', Validators.required],
+      salary: ['', [Validators.required, Validators.min(0)]],
     });
   }
 
   ngOnInit(): void {
-    this.financesForm.patchValue(this.data);
+    this.employmentForm.patchValue(this.data);
   }
 
   onFormSubmit() {
-    if (this.financesForm.valid) {
+    if (this.employmentForm.valid) {
       if (this.data) {
-        this._financesService
-          .updateFinance(this.data.id, this.financesForm.value)
+        this._employmentsService
+          .updateEmployment(this.data.id, this.employmentForm.value)
           .subscribe({
             next: (val: any) => {
               this._dialogRef.close(true);
@@ -47,7 +48,7 @@ export class EmploymentAddEditComponent {
             },
           });
       } else {
-        this._financesService.addFinance(this.financesForm.value).subscribe({
+        this._employmentsService.addEmployment(this.employmentForm.value).subscribe({
           next: (val: any) => {
             this._dialogRef.close(true);
             this._snackBar.openSnackBar(`${this.data.isIncome  ? 'Ingreso' : 'Salida'} añadido`);

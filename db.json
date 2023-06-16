@@ -39,6 +39,62 @@
       "salary": 3000,
       "isAvailable": true,
       "postulants": [1, 2, 3]
+    },
+    {
+      "id": 2,
+      "ruc": "20123456789",
+      "name": "UPC",
+      "description": "Profesor de Ciencias",
+      "creationDate": "2023-06-01T12:09:39Z",
+      "address": "Av. Salaverry 123",
+      "phone": 987654321,
+      "email": "administracion@upc.edu.pe",
+      "requirements": "Master en Ciencias",
+      "salary": 3000,
+      "isAvailable": true,
+      "postulants": []
+    },
+    {
+      "id": 3,
+      "ruc": "20123456789",
+      "name": "UPC",
+      "description": "Profesor de Ciencias",
+      "creationDate": "2023-06-01T12:09:39Z",
+      "address": "Av. Salaverry 123",
+      "phone": 987654321,
+      "email": "administracion@upc.edu.pe",
+      "requirements": "Master en Ciencias",
+      "salary": 3000,
+      "isAvailable": false,
+      "postulants": [1, 2, 3]
+    },
+    {
+      "id": 4,
+      "ruc": "20123456789",
+      "name": "UPC",
+      "description": "Profesor de Ciencias",
+      "creationDate": "2023-06-01T12:09:39Z",
+      "address": "Av. Salaverry 123",
+      "phone": 987654321,
+      "email": "administracion@upc.edu.pe",
+      "requirements": "Master en Ciencias",
+      "salary": 3000,
+      "isAvailable": true,
+      "postulants": [1, 2, 3]
+    },
+    {
+      "id": 5,
+      "ruc": "20123456789",
+      "name": "UPC",
+      "description": "Profesor de Ciencias",
+      "creationDate": "2023-06-01T12:09:39Z",
+      "address": "Av. Salaverry 123",
+      "phone": 987654321,
+      "email": "administracion@upc.edu.pe",
+      "requirements": "Master en Ciencias",
+      "salary": 3000,
+      "isAvailable": true,
+      "postulants": [1, 2, 3]
     }
   ],
   "users": [
