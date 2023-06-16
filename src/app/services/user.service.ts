@@ -20,21 +20,26 @@ export class UserService {
   }
 
   login(credentials: any): Observable<User[]> {
-    return this.http.get<User[]>(`${this.baseUrl}/users`, {
+    return this.http.get<User[]>(`${this.baseUrl}/users/login`, {
       params: new HttpParams().set('email', credentials.email).set('password', credentials.password)
     });
   }
 
-  checkUserExists(email: string): Observable<boolean> {
-    return this.http.get<any[]>(`${this.baseUrl}/users`, {
+  checkUserExists(email: string): Observable<boolean | null> {
+    return this.http.get<any[]>(`${this.baseUrl}/users/check`, {
       params: new HttpParams().set('email', email)
     }).pipe(
       map((response: any[]) => {
-        return response.length > 0; // If exists return true, else return false;
+        if (response.length > 0) {
+          return true;
+        } else if (response.length == 0) {
+          return false;
+        }
+        return null;
       }),
       catchError((error: any) => {
-        return of(false); // If error occur, return false;
+        return of(null); // If error occur, return false;
       })
-    ) as Observable<boolean>; // Cast to boolean
+    ) as Observable<boolean | null>; // Cast to boolean
   }
 }

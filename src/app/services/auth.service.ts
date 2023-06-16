@@ -31,17 +31,22 @@ export class AuthService {
             'Ya existe una cuenta registrada con este correo.'
           );
           return;
-        } else {
+        } else if (!userExists) {
           this._userService.signup(user).subscribe({
             next: (res) => {
               this._snackBar.openSnackBar('Registro exitoso!');
               this._router.navigate(['/login']);
             },
-            error: console.log,
+            error: (error) => { this._snackBar.openSnackBar(error.errror.message); },
           });
+        } else if (userExists == null) {
+          this._snackBar.openSnackBar(
+            'Hay un problema con el servidor. Intente más tarde.'
+          );
+          return;
         }
       },
-      error: console.log,
+      error: (error) => { this._snackBar.openSnackBar(error.errror.message); },
     });
   }
 
@@ -68,16 +73,21 @@ export class AuthService {
               this._snackBar.openSnackBar('Inicio de sesión exitoso!');
               this._router.navigate(['/menu']);
             },
-            error: console.log,
+            error: (error) => this._snackBar.openSnackBar(error.errror.message),
           });
-        } else {
+        }
+        else if (!userExists) {
+          this._snackBar.openSnackBar(
+            'Correo electrónico o contraseña incorrecta.'
+          );
+        } else if (userExists == null) {
           this._snackBar.openSnackBar(
             'Hay un problema con el servidor. Intente más tarde.'
           );
           return;
         }
       },
-      error: console.log,
+      error: (error) => this._snackBar.openSnackBar(error.errror.message),
       // Handle error
     });
   }
