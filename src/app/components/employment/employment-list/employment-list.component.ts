@@ -7,6 +7,7 @@ import { MatSort } from '@angular/material/sort';
 import { MatTableDataSource } from '@angular/material/table';
 import { SnackBarService } from 'src/app/services/snack-bar.service';
 import { Employment } from 'src/app/models/employment.model';
+import { EmploymentViewComponent } from '../employment-view/employment-view.component';
 
 @Component({
   selector: 'app-employment-list',
@@ -40,7 +41,13 @@ export class EmploymentListComponent {
     this.getEmployment();
   }
 
-  openAddEditFinancesForm() {
+  openJobOfferView(jobOffer: any): void {
+    this._dialog.open(EmploymentViewComponent, {
+      data: jobOffer
+    });
+  }
+
+  openAddEditEamploymentForm() {
     const dialogRef = this._dialog.open(EmploymentAddEditComponent);
     dialogRef.afterClosed().subscribe({
       next: (val) => {
@@ -71,7 +78,7 @@ export class EmploymentListComponent {
     }
   }
 
-  async deleteFinance(id: number) {
+  async deleteEmployment(id: number) {
     const confirmed = await this._snackBar.showDeleteConfirmation(id);
 
     if (confirmed) {

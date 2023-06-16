@@ -1,20 +1,38 @@
 <div class="dialog">
   <div mat-dialog-title>
-    <h1>Gestor Financiero</h1>
+    <h1>Ofertas Laborales</h1>
   </div>
-  <form [formGroup]="financesForm" (ngSubmit)="onFormSubmit()">
+  <form [formGroup]="employmentForm" (ngSubmit)="onFormSubmit()">
     <div mat-dialog-content class="content">
       <div class="row">
         <mat-form-field appearance="outline">
-          <mat-label>Tipo</mat-label>
-          <mat-select formControlName="isIncome">
-            <mat-option [value]="true">Ingreso</mat-option>
-            <mat-option [value]="false">Salida</mat-option>
-          </mat-select>
+          <mat-label>RUC</mat-label>
+          <input
+            matInput
+            type="text"
+            placeholder="20123456852"
+            formControlName="ruc"
+          />
         </mat-form-field>
         <mat-form-field appearance="outline">
+          <mat-label>Razon Social</mat-label>
+          <input
+            matInput
+            type="text"
+            placeholder="Razon Social"
+            formControlName="name"
+          />
+        </mat-form-field>
+      </div>
+
+      <div class="row">
+        <mat-form-field appearance="outline">
           <mat-label>Fecha</mat-label>
-          <input matInput [matDatepicker]="picker" formControlName="date" />
+          <input
+            matInput
+            [matDatepicker]="picker"
+            formControlName="creationDate"
+          />
           <mat-hint>MM/DD/YYYY</mat-hint>
           <mat-datepicker-toggle
             matIconSuffix
@@ -22,42 +40,44 @@
           ></mat-datepicker-toggle>
           <mat-datepicker #picker></mat-datepicker>
         </mat-form-field>
-      </div>
 
-      <div class="row">
         <mat-form-field appearance="outline">
-          <mat-label>Nombre</mat-label>
+          <mat-label>Salario</mat-label>
           <input
             matInput
-            type="text"
-            placeholder="Ej. Servicio Agua"
-            formControlName="name"
-          />
-        </mat-form-field>
-        <mat-form-field appearance="outline">
-          <mat-label>Cantidad</mat-label>
-          <input
-            matInput
-            placeholder="Ej. 120"
+            placeholder="Ej. 5000"
             type="number"
-            formControlName="exchange"
+            formControlName="salary"
           />
           <mat-hint>En soles</mat-hint>
         </mat-form-field>
       </div>
-
-      <div class="row">
-        <mat-form-field appearance="outline" class="comment">
-          <mat-label>Comentario</mat-label>
-          <input
-            matInput
-            type="text"
-            placeholder="Ej. Mas caro que el mes pasado"
-            formControlName="comment"
-          />
-        </mat-form-field>
-      </div>
     </div>
+
+    <div class="row">
+      <mat-form-field appearance="outline" id="description">
+        <mat-label>Descripcion</mat-label>
+        <input
+          matInput
+          type="text"
+          placeholder="Profesor de ..."
+          formControlName="description"
+        />
+      </mat-form-field>
+    </div>
+
+    <div class="row">
+      <mat-form-field appearance="outline" id="requirements">
+        <mat-label>Requerimientos</mat-label>
+        <input
+          matInput
+          type="text"
+          placeholder="Grado en ..."
+          formControlName="requirements"
+        />
+      </mat-form-field>
+    </div>
+
     <div mat-dialog-actions class="action">
       <button mat-raised-button type="button" [mat-dialog-close]="false">
         Cancelar
