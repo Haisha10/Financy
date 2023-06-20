@@ -1,4 +1,4 @@
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpParams } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 
@@ -12,16 +12,24 @@ import { environment } from './environment';
 export class FinancesService {
   private baseUrl = environment.base_url;
   constructor(private _http: HttpClient) {}
-  addFinance(data: any): Observable<Finance> {
-    return this._http.post<Finance>(`${this.baseUrl}/finances`, data);
+  addFinance(data: any, currentUserId: number): Observable<Finance> {
+    return this._http.post<Finance>(`${this.baseUrl}/finances`, data, {
+      params: new HttpParams().set('userId', currentUserId)
+    });
   }
-  updateFinance(id: number, data: Finance): Observable<Finance> {
-    return this._http.put<Finance>(`${this.baseUrl}/finances/${id}`, data);
+  updateFinance(id: number, data: Finance, currentUserId: number): Observable<Finance> {
+    return this._http.put<Finance>(`${this.baseUrl}/finances`, data, {
+      params: new HttpParams().set('userId', currentUserId).set('financeId', id)
+    });
   }
-  getFinanceList(): Observable<Finance[]> {
-    return this._http.get<Finance[]>(`${this.baseUrl}/finances`);
+  getFinanceList(currentUserId: number): Observable<Finance[]> {
+    return this._http.get<Finance[]>(`${this.baseUrl}/finances`, {
+      params: new HttpParams().set('userId', currentUserId)
+    });
   }
   deleteFinance(id: number): Observable<Finance> {
-    return this._http.delete<Finance>(`${this.baseUrl}/finances/${id}`);
+    return this._http.delete<Finance>(`${this.baseUrl}/finances`, {
+      params: new HttpParams().set('financeId', id)
+    });
   }
 }

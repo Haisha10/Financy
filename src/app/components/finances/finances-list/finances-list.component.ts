@@ -7,6 +7,8 @@ import { MatSort } from '@angular/material/sort';
 import { MatTableDataSource } from '@angular/material/table';
 import { SnackBarService } from 'src/app/services/snack-bar.service';
 import { Finance } from 'src/app/models/finance.model';
+import { AuthService } from 'src/app/services/auth.service';
+
 
 @Component({
   selector: 'app-finances-list',
@@ -32,10 +34,13 @@ export class FinancesListComponent implements OnInit {
   constructor(
     private _dialog: MatDialog,
     private _financesService: FinancesService,
-    private _snackBar: SnackBarService
+    private _snackBar: SnackBarService,
+    private _authService: AuthService
   ) { }
 
+  currentUser: any;
   ngOnInit(): void {
+    this.currentUser = this._authService.getLoggedUser();
     this.getFinanceList();
   }
 
@@ -51,7 +56,7 @@ export class FinancesListComponent implements OnInit {
   }
 
   getFinanceList() {
-    this._financesService.getFinanceList().subscribe({
+    this._financesService.getFinanceList(this.currentUser.id).subscribe({
       next: (res) => {
         this.dataSource = new MatTableDataSource(res);
         this.dataSource.sort = this.sort;

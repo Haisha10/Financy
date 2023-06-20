@@ -3,6 +3,7 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
 import { SnackBarService } from 'src/app/services/snack-bar.service';
 import { FinancesService } from 'src/app/services/finances.service';
+import { AuthService } from 'src/app/services/auth.service';
 
 @Component({
   selector: 'app-finances-add-edit',
@@ -17,7 +18,8 @@ export class FinancesAddEditComponent implements OnInit {
     private _financesService: FinancesService,
     private _dialogRef: MatDialogRef<FinancesAddEditComponent>,
     @Inject(MAT_DIALOG_DATA) public data: any,
-    private _snackBar: SnackBarService
+    private _snackBar: SnackBarService,
+    private _authService: AuthService
   ) {
     this.financesForm = this._fb.group({
       isIncome: [true],
@@ -27,8 +29,10 @@ export class FinancesAddEditComponent implements OnInit {
       comment: ['', Validators.maxLength(100)]
     });
   }
+  currentUser: any;
 
   ngOnInit(): void {
+    this.currentUser = this._authService.getLoggedUser();
     this.financesForm.patchValue(this.data);
   }
 
@@ -36,21 +40,21 @@ export class FinancesAddEditComponent implements OnInit {
     if (this.financesForm.valid) {
       if (this.data) {
         this._financesService
-          .updateFinance(this.data.id, this.financesForm.value)
+          .updateFinance(this.data.id, this.financesForm.value, this.currentUser.id)
           .subscribe({
             next: (val: any) => {
               this._dialogRef.close(true);
-              this._snackBar.openSnackBar(`${this.data.isIncome ? 'Ingreso' : 'Salida'} actualizado`);
+              this._snackBar.openSnackBar(`${this.financesForm.value.isIncome ? 'Ingreso' : 'Salida'} actualizado`);
             },
             error: (err: any) => {
               console.error(err);
             },
           });
       } else {
-        this._financesService.addFinance(this.financesForm.value).subscribe({
+        this._financesService.addFinance(this.financesForm.value, this.currentUser.id).subscribe({
           next: (val: any) => {
             this._dialogRef.close(true);
-            this._snackBar.openSnackBar(`${this.data.isIncome  ? 'Ingreso' : 'Salida'} añadido`);
+            this._snackBar.openSnackBar(`${this.financesForm.value.isIncome  ? 'Ingreso' : 'Salida'} añadido`);
           },
           error: (err: any) => {
             console.error(err);
