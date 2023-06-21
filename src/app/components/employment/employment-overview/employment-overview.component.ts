@@ -16,17 +16,20 @@ export class EmploymentOverviewComponent implements OnInit {
     private _snackBar: SnackBarService,
     private _dialog: MatDialog,
     private _authService: AuthService
-  ) { }
+  ) {
+    this.jobOffers = [];
+  }
   currentUser: any;
+  jobOffers: any[];
   ngOnInit(): void {
     this.getEmployment();
     this.currentUser = this._authService.getLoggedUser();
   }
-  jobOffers: any[] = [];
   getEmployment() {
     this._employmentsService.getEmploymentList().subscribe({
       next: (res) => {
         this.jobOffers = res;
+        console.log(this.jobOffers);
       },
       error: (err) => {
         this._snackBar.openSnackBar(err.error.message);
@@ -37,6 +40,20 @@ export class EmploymentOverviewComponent implements OnInit {
   openJobOfferView(jobOffer: any): void {
     this._dialog.open(EmploymentViewComponent, {
       data: jobOffer
+    });
+  }
+
+  applyToJobOffer(jobOffer: any): void {
+    var newJobOffer = jobOffer;
+    newJobOffer.postulants.push(this.currentUser.id);
+    this._employmentsService.updateEmployment(jobOffer.id, newJobOffer, 0).subscribe({
+      next: (res) => {
+        this._snackBar.openSnackBar('Postulación exitosa');
+        this.getEmployment();
+      },
+      error: (err) => {
+        this._snackBar.openSnackBar(err.error.message);
+      }
     });
   }
 }

@@ -19,7 +19,7 @@
               <p>Requisitos: {{ jobOffer.requirements }}</p>
             </mat-card-content>
             <mat-card-actions>
-              <button mat-button color="primary" *ngIf="!jobOffer.postulants.includes(currentUser.id)">Aplicar</button>
+              <button mat-button color="primary" *ngIf="!jobOffer.postulants.includes(currentUser.id)" (click)="applyToJobOffer(jobOffer)">Aplicar</button>
               <button mat-button (click)="openJobOfferView(jobOffer)">Ver más</button>
             </mat-card-actions>
           </mat-card>

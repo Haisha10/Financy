@@ -44,6 +44,7 @@ export class EmploymentAddEditComponent {
   onFormSubmit() {
     if (this.employmentForm.valid) {
       if (this.data) {
+        this.employmentForm.value.isAvailable = this.data.isAvailable;
         this._employmentsService
           .updateEmployment(this.data.id, this.employmentForm.value, this.currentUser.id)
           .subscribe({
@@ -56,6 +57,7 @@ export class EmploymentAddEditComponent {
             },
           });
       } else {
+        this.employmentForm.value.isAvailable = true;
         this._employmentsService.addEmployment(this.employmentForm.value, this.currentUser.id).subscribe({
           next: (val: any) => {
             this._dialogRef.close(true);

@@ -107,14 +107,14 @@
               <button
                 mat-icon-button
                 color="primary"
-                (click)="openEditForm(row)"
+                (click)="openViewForm(row)"
               >
                 <mat-icon>edit</mat-icon>
               </button>
               <button
                 mat-icon-button
                 color="warn"
-                (click)="row.isAvailable = !row.isAvailable"
+                (click)="toogleAvailability(row)"
               >
                 <mat-icon
                   class="status-icon"

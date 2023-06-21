@@ -3,7 +3,7 @@ import { MatDialog } from '@angular/material/dialog';
 import { EmploymentAddEditComponent } from '../employment-add-edit/employment-add-edit.component';
 import { EmploymentsService } from '../../../services/employments.service';
 import { MatPaginator } from '@angular/material/paginator';
-import { MatSort } from '@angular/material/sort';
+import { MatSort, MatSortHeader, MatSortable, Sort } from '@angular/material/sort';
 import { MatTableDataSource } from '@angular/material/table';
 import { SnackBarService } from 'src/app/services/snack-bar.service';
 import { Employment } from 'src/app/models/employment.model';
@@ -15,7 +15,7 @@ import { AuthService } from 'src/app/services/auth.service';
   templateUrl: './employment-list.component.html',
   styleUrls: ['./employment-list.component.scss']
 })
-export class EmploymentListComponent {
+export class EmploymentListComponent implements OnInit {
   displayedColumns: string[] = [
     'id',
     'isAvailable',
@@ -31,6 +31,7 @@ export class EmploymentListComponent {
 
   @ViewChild(MatPaginator) paginator!: MatPaginator;
   @ViewChild(MatSort) sort!: MatSort;
+  defaultSort: Sort = { active: 'id', direction: 'asc' };
 
   constructor(
     private _dialog: MatDialog,
@@ -45,7 +46,14 @@ export class EmploymentListComponent {
     this.getEmployment();
   }
 
-  openJobOfferView(jobOffer: any): void {
+  ngAfterViewInit() {
+    this.sort.sort(<MatSortable>{
+      id: this.defaultSort.active,
+      start: this.defaultSort.direction,
+    });
+  }
+
+  openJobOfferView(jobOffer: Employment): void {
     this._dialog.open(EmploymentViewComponent, {
       data: jobOffer
     });
@@ -98,7 +106,7 @@ export class EmploymentListComponent {
     }
   }
 
-  openEditForm(data: Employment) {
+  openViewForm(data: Employment) {
     const dialogRef = this._dialog.open(EmploymentAddEditComponent, {
       data,
     });
@@ -111,4 +119,18 @@ export class EmploymentListComponent {
       },
     });
   }
+
+  toogleAvailability(employment: Employment) {
+    var newEmployment: Employment = employment;
+    newEmployment.isAvailable = !employment.isAvailable;
+    this._employmentsService
+      .updateEmployment(employment.id, newEmployment, this.currentUser.id).subscribe({
+        next: (res) => {
+          this.getEmployment();
+          this._snackBar.openSnackBar('Actualizado satisfactoriamente.');
+        },
+        error: console.log,
+      });
+  }
+
 }

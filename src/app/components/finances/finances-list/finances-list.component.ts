@@ -3,7 +3,7 @@ import { MatDialog } from '@angular/material/dialog';
 import { FinancesAddEditComponent } from '../finances-add-edit/finances-add-edit.component';
 import { FinancesService } from '../../../services/finances.service';
 import { MatPaginator } from '@angular/material/paginator';
-import { MatSort } from '@angular/material/sort';
+import { MatSort, MatSortable, Sort } from '@angular/material/sort';
 import { MatTableDataSource } from '@angular/material/table';
 import { SnackBarService } from 'src/app/services/snack-bar.service';
 import { Finance } from 'src/app/models/finance.model';
@@ -30,6 +30,7 @@ export class FinancesListComponent implements OnInit {
 
   @ViewChild(MatPaginator) paginator!: MatPaginator;
   @ViewChild(MatSort) sort!: MatSort;
+  defaultSort: Sort = { active: 'id', direction: 'asc' };
 
   constructor(
     private _dialog: MatDialog,
@@ -42,6 +43,13 @@ export class FinancesListComponent implements OnInit {
   ngOnInit(): void {
     this.currentUser = this._authService.getLoggedUser();
     this.getFinanceList();
+  }
+
+  ngAfterViewInit() {
+    this.sort.sort(<MatSortable>{
+      id: this.defaultSort.active,
+      start: this.defaultSort.direction,
+    });
   }
 
   openAddEditFinancesForm() {
@@ -61,6 +69,7 @@ export class FinancesListComponent implements OnInit {
         this.dataSource = new MatTableDataSource(res);
         this.dataSource.sort = this.sort;
         this.dataSource.paginator = this.paginator;
+
         this.balance = 0
         res.forEach((element: Finance) => {
           this.balance += element.exchange;
