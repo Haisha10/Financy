@@ -1,5 +1,7 @@
 .dialog {
   padding: 20px;
+  overflow-y: auto;
+  max-height: 80vh;
 }
 
 .row mat-form-field {
@@ -8,10 +10,24 @@
   padding-bottom: 2%;
 }
 
-.row #description, #requirements {
-  padding-left: 4%;
-  padding-bottom: 4%;
-  width: 90%;
+.row {
+  .ruc {
+    width: 35%;
+  }
+  .name {
+    width: 61%;
+  }
+
+  #phone {
+    width: 35%;
+  }
+  #email {
+    width: 61%;
+  }
+}
+
+.row #requirements {
+  width: 98%;
 }
 
 .row .comment {

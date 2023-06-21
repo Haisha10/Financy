@@ -8,6 +8,7 @@ import { MatTableDataSource } from '@angular/material/table';
 import { SnackBarService } from 'src/app/services/snack-bar.service';
 import { Employment } from 'src/app/models/employment.model';
 import { EmploymentViewComponent } from '../employment-view/employment-view.component';
+import { AuthService } from 'src/app/services/auth.service';
 
 @Component({
   selector: 'app-employment-list',
@@ -34,10 +35,13 @@ export class EmploymentListComponent {
   constructor(
     private _dialog: MatDialog,
     private _employmentsService: EmploymentsService,
-    private _snackBar: SnackBarService
+    private _snackBar: SnackBarService,
+    private _authService: AuthService
   ) { }
 
+  currentUser: any;
   ngOnInit(): void {
+    this.currentUser = this._authService.getLoggedUser();
     this.getEmployment();
   }
 
@@ -59,7 +63,7 @@ export class EmploymentListComponent {
   }
 
   getEmployment() {
-    this._employmentsService.getEmploymentList().subscribe({
+    this._employmentsService.getEmploymentListByUserId(this.currentUser.id).subscribe({
       next: (res) => {
         this.dataSource = new MatTableDataSource(res);
         this.dataSource.sort = this.sort;

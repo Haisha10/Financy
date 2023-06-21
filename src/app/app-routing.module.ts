@@ -14,6 +14,7 @@ import { EmploymentOverviewComponent } from './components/employment/employment-
 
 // Services Import
 import { AuthService } from './services/auth.service';
+import { EmploymentViewComponent } from './components/employment/employment-view/employment-view.component';
 
 const routes: Routes = [
   { path: '', redirectTo: '/home', pathMatch: 'full' },
@@ -21,7 +22,7 @@ const routes: Routes = [
   { path: 'login', component: LoginComponent },
   { path: 'signup', component: SignupComponent },
   { path: 'employment/list', component: EmploymentListComponent, canActivate: [AuthService] },
-  { path: 'employment/view', component: EmploymentListComponent, canActivate: [AuthService] },
+  { path: 'employment/view', component: EmploymentViewComponent, canActivate: [AuthService] },
   { path: 'employment/overview', component: EmploymentOverviewComponent, canActivate: [AuthService] },
   { path: 'finances', component: FinancesListComponent, canActivate: [AuthService] },
   { path: 'menu', component: MenuComponent, canActivate: [AuthService] },

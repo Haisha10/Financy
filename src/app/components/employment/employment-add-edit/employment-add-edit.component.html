@@ -1,20 +1,18 @@
 <div class="dialog">
-  <div mat-dialog-title>
-    <h1>Ofertas Laborales</h1>
-  </div>
   <form [formGroup]="employmentForm" (ngSubmit)="onFormSubmit()">
     <div mat-dialog-content class="content">
       <div class="row">
-        <mat-form-field appearance="outline">
+        <h3>Información del Empleador</h3>
+        <mat-form-field appearance="outline" class="ruc">
           <mat-label>RUC</mat-label>
           <input
             matInput
-            type="text"
+            type="number"
             placeholder="20123456852"
             formControlName="ruc"
           />
         </mat-form-field>
-        <mat-form-field appearance="outline">
+        <mat-form-field appearance="outline" class="name">
           <mat-label>Razon Social</mat-label>
           <input
             matInput
@@ -23,11 +21,21 @@
             formControlName="name"
           />
         </mat-form-field>
+        <mat-form-field appearance="outline" id="requirements">
+          <mat-label>Dirección</mat-label>
+          <textarea
+            matInput
+            type="text"
+            placeholder="Dirección"
+            formControlName="address"
+          ></textarea>
+        </mat-form-field>
       </div>
 
       <div class="row">
+        <h3>Información del Empleo</h3>
         <mat-form-field appearance="outline">
-          <mat-label>Fecha</mat-label>
+          <mat-label>Fecha de Publicación</mat-label>
           <input
             matInput
             [matDatepicker]="picker"
@@ -40,7 +48,6 @@
           ></mat-datepicker-toggle>
           <mat-datepicker #picker></mat-datepicker>
         </mat-form-field>
-
         <mat-form-field appearance="outline">
           <mat-label>Salario</mat-label>
           <input
@@ -52,30 +59,52 @@
           <mat-hint>En soles</mat-hint>
         </mat-form-field>
       </div>
-    </div>
 
-    <div class="row">
-      <mat-form-field appearance="outline" id="description">
-        <mat-label>Descripcion</mat-label>
-        <input
-          matInput
-          type="text"
-          placeholder="Profesor de ..."
-          formControlName="description"
-        />
-      </mat-form-field>
-    </div>
+      <div class="row">
+        <mat-form-field appearance="outline" id="requirements">
+          <mat-label>Descripción</mat-label>
+          <input
+            matInput
+            type="text"
+            placeholder="Profesor de Ciencias"
+            formControlName="description"
+          />
+        </mat-form-field>
+      </div>
 
-    <div class="row">
-      <mat-form-field appearance="outline" id="requirements">
-        <mat-label>Requerimientos</mat-label>
-        <input
-          matInput
-          type="text"
-          placeholder="Grado en ..."
-          formControlName="requirements"
-        />
-      </mat-form-field>
+      <div class="row">
+        <mat-form-field appearance="outline" id="requirements">
+          <mat-label>Requerimientos</mat-label>
+          <textarea
+            matInput
+            type="text"
+            placeholder="Grado en ..."
+            formControlName="requirements"
+          ></textarea>
+        </mat-form-field>
+      </div>
+
+      <div class="row">
+        <h3>Información de Contacto</h3>
+        <mat-form-field appearance="outline" id="phone">
+          <mat-label>Teléfono</mat-label>
+          <input
+            matInput
+            type="number"
+            placeholder="987654321"
+            formControlName="phone"
+          />
+        </mat-form-field>
+        <mat-form-field appearance="outline" id="email">
+          <mat-label>Correo Electrónico</mat-label>
+          <input
+            matInput
+            type="text"
+            placeholder="email@domain.com"
+            formControlName="email"
+          />
+        </mat-form-field>
+      </div>
     </div>
 
     <div mat-dialog-actions class="action">

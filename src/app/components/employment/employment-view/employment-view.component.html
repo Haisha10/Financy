@@ -16,7 +16,7 @@
           placeholder="Razón Social"
         />
       </mat-form-field>
-      <mat-form-field appearance="outline" id="requeriments">
+      <mat-form-field appearance="outline" id="requirements">
         <mat-label>Dirección</mat-label>
         <textarea matInput disabled>{{ jobOffer.address }}</textarea>
       </mat-form-field>
@@ -36,7 +36,6 @@
         <mat-label>Salario</mat-label>
         <input
           matInput
-          placeholder="Salario"
           disabled
           value="{{ jobOffer.salary | currency : 'PEN' }}"
         />
@@ -44,7 +43,7 @@
     </div>
 
     <div class="row">
-      <mat-form-field appearance="outline" id="requeriments">
+      <mat-form-field appearance="outline" id="requirements">
         <mat-label>Requerimientos</mat-label>
         <textarea matInput disabled>{{ jobOffer.requirements }}</textarea>
       </mat-form-field>
@@ -64,7 +63,6 @@
         <mat-label>Correo Electrónico</mat-label>
         <input
           matInput
-          placeholder="Salario"
           disabled
           value="{{ jobOffer.email }}"
         />
