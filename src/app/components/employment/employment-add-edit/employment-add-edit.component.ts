@@ -56,7 +56,6 @@ export class EmploymentAddEditComponent {
             },
           });
       } else {
-        console.log(this.employmentForm.value);
         this._employmentsService.addEmployment(this.employmentForm.value, this.currentUser.id).subscribe({
           next: (val: any) => {
             this._dialogRef.close(true);
@@ -69,7 +68,6 @@ export class EmploymentAddEditComponent {
       }
     } else {
       this._snackBar.openSnackBar(`Campos inválidos, por favor verifique los datos ingresados.`);
-      console.log(this.employmentForm.value, this.employmentForm.errors);
     }
   }
 }
