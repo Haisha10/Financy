@@ -1,142 +1,351 @@
-<router-outlet></router-outlet>
 <app-tool-bar>
-  <header>
-    <h3>
-      <img
-        src="assets/img/financyLogo.png"
-        alt="Financy logo"
-        style="float: right"
-      />
-    </h3>
-    <div class="title">
-      <h1>Recomendaciones Financieras</h1>
-    </div>
-  </header>
-  <div class="Recomendaciones">
-    <div class="tip1">
-      <div class="items">
-        <div class="titulof">
-          <h2>Define metas financieras</h2>
-        </div>
-      </div>
-      <p>
-        El primer paso para dar un buen manejo a tu dinero es saber qué es lo
-        que quieres lograr con él. Las metas deben ser a corto, mediano y largo
-        plazo
-        <button>Ver mas</button>
-      </p>
-    </div>
-
-    <div class="tip1">
-      <div class="items">
-        <div class="titulof">
-          <h2>Crea un presupuesto</h2>
-        </div>
+  <div class="body">
+    <div class="body-container">
+      <div class="body-header">
+        <h1>Recomendaciones Financieras</h1>
       </div>
 
-      <p>
-        Es importante saber exactamente cuánto dinero tienes disponible y cómo
-        lo estás gastando. Crea un presupuesto mensual y trata de ceñirte a él
-        para evitar gastar.
-        <button>Ver mas</button>
-      </p>
-    </div>
+      <div class="card-container">
+        <mat-card class="tip-card">
+          <mat-card-header>
+            <div mat-card-avatar class="tip-icon">
+              <mat-icon>attach_money</mat-icon>
+            </div>
+            <mat-card-title>Define metas financieras</mat-card-title>
+          </mat-card-header>
+          <mat-card-content>
+            <p>
+              El primer paso para dar un buen manejo a tu dinero es saber qué es lo que quieres lograr con él. Las metas deben ser a corto, mediano y largo plazo.
+            </p>
+          </mat-card-content>
+          <mat-card-actions>
+            <button mat-button color="primary" (click)="redirectToURL()">Ver más</button>
+          </mat-card-actions>
+        </mat-card>
 
-    <div class="tip1">
-      <div class="items">
-        <div class="titulof">
-          <h2>Ahorra regularmente</h2>
-        </div>
+        <mat-card class="tip-card">
+          <mat-card-header>
+            <div mat-card-avatar class="tip-icon">
+              <mat-icon>shopping_cart</mat-icon>
+            </div>
+            <mat-card-title>Crea un presupuesto</mat-card-title>
+          </mat-card-header>
+          <mat-card-content>
+            <p>
+              Es importante saber exactamente cuánto dinero tienes disponible y cómo lo estás gastando. Crea un presupuesto mensual y trata de ceñirte a él para evitar gastar.
+            </p>
+          </mat-card-content>
+          <mat-card-actions>
+            <button mat-button color="primary" (click)="redirectToURL()">Ver más</button>
+          </mat-card-actions>
+        </mat-card>
+
+        <mat-card class="tip-card">
+          <mat-card-header>
+            <div mat-card-avatar class="tip-icon">
+              <mat-icon>savings</mat-icon>
+            </div>
+            <mat-card-title>Ahorra regularmente</mat-card-title>
+          </mat-card-header>
+          <mat-card-content>
+            <p>
+              Establece una meta de ahorro mensual y trata de cumplirla. Puedes ahorrar automáticamente mediante transferencias periódicas a una cuenta de ahorro.
+            </p>
+          </mat-card-content>
+          <mat-card-actions>
+            <button mat-button color="primary" (click)="redirectToURL()">Ver más</button>
+          </mat-card-actions>
+        </mat-card>
+
+        <mat-card class="tip-card">
+          <mat-card-header>
+            <div mat-card-avatar class="tip-icon">
+              <mat-icon>credit_card</mat-icon>
+            </div>
+            <mat-card-title>Paga tus deudas</mat-card-title>
+          </mat-card-header>
+          <mat-card-content>
+            <p>
+              Si tienes deudas, trata de pagarlas lo antes posible para evitar intereses adicionales. Si tienes varias deudas, considera consolidarlas en un solo pago.
+            </p>
+          </mat-card-content>
+          <mat-card-actions>
+            <button mat-button color="primary" (click)="redirectToURL()">Ver más</button>
+          </mat-card-actions>
+        </mat-card>
+
+        <mat-card class="tip-card">
+          <mat-card-header>
+            <div mat-card-avatar class="tip-icon">
+              <mat-icon>school</mat-icon>
+            </div>
+            <mat-card-title>Invierte en ti mismo</mat-card-title>
+          </mat-card-header>
+          <mat-card-content>
+            <p>
+              Considera la posibilidad de invertir en educación, cursos en línea, libros o herramientas que puedan mejorar tus perspectivas laborales.
+            </p>
+          </mat-card-content>
+          <mat-card-actions>
+            <button mat-button color="primary" (click)="redirectToURL()">Ver más</button>
+          </mat-card-actions>
+        </mat-card>
+
+        <mat-card class="tip-card">
+          <mat-card-header>
+            <div mat-card-avatar class="tip-icon">
+              <mat-icon>local_offer</mat-icon>
+            </div>
+            <mat-card-title>Compara precios</mat-card-title>
+          </mat-card-header>
+          <mat-card-content>
+            <p>
+              Antes de realizar una compra, investiga y compara precios para asegurarte de que estás obteniendo la mejor oferta posible.
+            </p>
+          </mat-card-content>
+          <mat-card-actions>
+            <button mat-button color="primary" (click)="redirectToURL()">Ver más</button>
+          </mat-card-actions>
+        </mat-card>
+
+        <mat-card class="tip-card">
+          <mat-card-header>
+            <div mat-card-avatar class="tip-icon">
+              <mat-icon>security</mat-icon>
+            </div>
+            <mat-card-title>Planifica para el futuro</mat-card-title>
+          </mat-card-header>
+          <mat-card-content>
+            <p>
+              Asegúrate de estar preparado para situaciones inesperadas, como emergencias médicas o reparaciones del hogar, mediante la creación de un fondo de emergencia.
+            </p>
+          </mat-card-content>
+          <mat-card-actions>
+            <button mat-button color="primary" (click)="redirectToURL()">Ver más</button>
+          </mat-card-actions>
+        </mat-card>
+
+        <mat-card class="tip-card">
+          <mat-card-header>
+            <div mat-card-avatar class="tip-icon">
+              <mat-icon>account_balance</mat-icon>
+            </div>
+            <mat-card-title>Buen historial crediticio</mat-card-title>
+          </mat-card-header>
+          <mat-card-content>
+            <p>
+              Debes cuidar tu reputación crediticia, cumpliendo puntualmente con tus obligaciones, y no exclusivamente cuando se trate de deudas con entidades financieras.
+            </p>
+          </mat-card-content>
+          <mat-card-actions>
+            <button mat-button color="primary" (click)="redirectToURL()">Ver más</button>
+          </mat-card-actions>
+        </mat-card>
+
+        <mat-card class="tip-card">
+          <mat-card-header>
+            <div mat-card-avatar class="tip-icon">
+              <mat-icon>lightbulb</mat-icon>
+            </div>
+            <mat-card-title>Busca Asesoramiento</mat-card-title>
+          </mat-card-header>
+          <mat-card-content>
+            <p>
+              Busca asesoramiento de un profesional financiero o de una fuente confiable. Esto puede ayudarte a tomar decisiones informadas y a mejorar tu situación financiera a largo plazo.
+            </p>
+          </mat-card-content>
+          <mat-card-actions>
+            <button mat-button color="primary" (click)="redirectToURL()">Ver más</button>
+          </mat-card-actions>
+        </mat-card>
+
+        <mat-card class="tip-card">
+          <mat-card-header>
+            <div mat-card-avatar class="tip-icon">
+              <mat-icon>attach_money</mat-icon>
+            </div>
+            <mat-card-title>Controla tus gastos</mat-card-title>
+          </mat-card-header>
+          <mat-card-content>
+            <p>
+              Lleva un registro de tus gastos y establece un límite para cada categoría. Esto te ayudará a evitar gastos innecesarios y a mantener un equilibrio financiero.
+            </p>
+          </mat-card-content>
+          <mat-card-actions>
+            <button mat-button color="primary" (click)="redirectToURL()">Ver más</button>
+          </mat-card-actions>
+        </mat-card>
+
+        <mat-card class="tip-card">
+          <mat-card-header>
+            <div mat-card-avatar class="tip-icon">
+              <mat-icon>work_off</mat-icon>
+            </div>
+            <mat-card-title>Ahorra para la jubilación</mat-card-title>
+          </mat-card-header>
+          <mat-card-content>
+            <p>
+              Empieza a ahorrar para tu jubilación lo antes posible. Cuanto más tiempo tengas para ahorrar, más cómoda será tu jubilación.
+            </p>
+          </mat-card-content>
+          <mat-card-actions>
+            <button mat-button color="primary" (click)="redirectToURL()">Ver más</button>
+          </mat-card-actions>
+        </mat-card>
+
+        <mat-card class="tip-card">
+          <mat-card-header>
+            <div mat-card-avatar class="tip-icon">
+              <mat-icon>home</mat-icon>
+            </div>
+            <mat-card-title>Compra una vivienda asequible</mat-card-title>
+          </mat-card-header>
+          <mat-card-content>
+            <p>
+              Si estás pensando en comprar una casa, asegúrate de que el precio sea asequible y que puedas manejar los pagos hipotecarios sin problemas.
+            </p>
+          </mat-card-content>
+          <mat-card-actions>
+            <button mat-button color="primary" (click)="redirectToURL()">Ver más</button>
+          </mat-card-actions>
+        </mat-card>
+
+        <mat-card class="tip-card">
+          <mat-card-header>
+            <div mat-card-avatar class="tip-icon">
+              <mat-icon>credit_card</mat-icon>
+            </div>
+            <mat-card-title>Utiliza las tarjetas de crédito de manera responsable</mat-card-title>
+          </mat-card-header>
+          <mat-card-content>
+            <p>
+              Utiliza tus tarjetas de crédito de manera responsable y evita acumular deudas. Paga el saldo completo cada mes para evitar intereses y cargos adicionales.
+            </p>
+          </mat-card-content>
+          <mat-card-actions>
+            <button mat-button color="primary" (click)="redirectToURL()">Ver más</button>
+          </mat-card-actions>
+        </mat-card>
+
+        <mat-card class="tip-card">
+          <mat-card-header>
+            <div mat-card-avatar class="tip-icon">
+              <mat-icon>trending_up</mat-icon>
+            </div>
+            <mat-card-title>Invierte en el mercado de valores</mat-card-title>
+          </mat-card-header>
+          <mat-card-content>
+            <p>
+              Considera invertir parte de tu dinero en el mercado de valores. Consulta con un asesor financiero para obtener orientación sobre las mejores opciones de inversión.
+            </p>
+          </mat-card-content>
+          <mat-card-actions>
+            <button mat-button color="primary" (click)="redirectToURL()">Ver más</button>
+          </mat-card-actions>
+        </mat-card>
+
+        <mat-card class="tip-card">
+          <mat-card-header>
+            <div mat-card-avatar class="tip-icon">
+              <mat-icon>local_offer</mat-icon>
+            </div>
+            <mat-card-title>Aprovecha las ofertas y descuentos</mat-card-title>
+          </mat-card-header>
+          <mat-card-content>
+            <p>
+              Antes de hacer una compra, busca ofertas y descuentos. Compara precios y busca promociones especiales para ahorrar dinero en tus compras.
+            </p>
+          </mat-card-content>
+          <mat-card-actions>
+            <button mat-button color="primary" (click)="redirectToURL()">Ver más</button>
+          </mat-card-actions>
+        </mat-card>
+
+        <mat-card class="tip-card">
+          <mat-card-header>
+            <div mat-card-avatar class="tip-icon">
+              <mat-icon>school</mat-icon>
+            </div>
+            <mat-card-title>Invierte en tu educación</mat-card-title>
+          </mat-card-header>
+          <mat-card-content>
+            <p>
+              Considera invertir en tu educación y desarrollo profesional. Toma cursos, asiste a conferencias y adquiere nuevas habilidades que te ayuden a avanzar en tu carrera y aumentar tus ingresos.
+            </p>
+          </mat-card-content>
+          <mat-card-actions>
+            <button mat-button color="primary" (click)="redirectToURL()">Ver más</button>
+          </mat-card-actions>
+        </mat-card>
+
+        <mat-card class="tip-card">
+          <mat-card-header>
+            <div mat-card-avatar class="tip-icon">
+              <mat-icon>attach_file</mat-icon>
+            </div>
+            <mat-card-title>Mantén tus documentos financieros organizados</mat-card-title>
+          </mat-card-header>
+          <mat-card-content>
+            <p>
+              Guarda y organiza tus recibos, facturas y otros documentos financieros importantes. Esto te ayudará a mantener un seguimiento de tus transacciones y facilitará la preparación de impuestos.
+            </p>
+          </mat-card-content>
+          <mat-card-actions>
+            <button mat-button color="primary" (click)="redirectToURL()">Ver más</button>
+          </mat-card-actions>
+        </mat-card>
+
+        <mat-card class="tip-card">
+          <mat-card-header>
+            <div mat-card-avatar class="tip-icon">
+              <mat-icon>local_atm</mat-icon>
+            </div>
+            <mat-card-title>Paga tus deudas a tiempo</mat-card-title>
+          </mat-card-header>
+          <mat-card-content>
+            <p>
+              Evita retrasos en el pago de tus deudas, como préstamos estudiantiles o tarjetas de crédito. Esto te ayudará a mantener una buena reputación crediticia y evitar cargos por pagos atrasados.
+            </p>
+          </mat-card-content>
+          <mat-card-actions>
+            <button mat-button color="primary" (click)="redirectToURL()">Ver más</button>
+          </mat-card-actions>
+        </mat-card>
+
+        <mat-card class="tip-card">
+          <mat-card-header>
+            <div mat-card-avatar class="tip-icon">
+              <mat-icon>account_balance</mat-icon>
+            </div>
+            <mat-card-title>Diversifica tus inversiones</mat-card-title>
+          </mat-card-header>
+          <mat-card-content>
+            <p>
+              No coloques todos tus huevos en una sola canasta. Diversifica tus inversiones para reducir el riesgo. Considera diferentes clases de activos, como acciones, bonos y bienes raíces.
+            </p>
+          </mat-card-content>
+          <mat-card-actions>
+            <button mat-button color="primary" (click)="redirectToURL()">Ver más</button>
+          </mat-card-actions>
+        </mat-card>
+
+        <mat-card class="tip-card">
+          <mat-card-header>
+            <div mat-card-avatar class="tip-icon">
+              <mat-icon>help_outline</mat-icon>
+            </div>
+            <mat-card-title>Busca asesoramiento financiero profesional</mat-card-title>
+          </mat-card-header>
+          <mat-card-content>
+            <p>
+              Si te sientes abrumado o no estás seguro de cómo manejar tus finanzas, considera buscar la ayuda de un asesor financiero profesional. Ellos pueden brindarte orientación personalizada y ayudarte a tomar decisiones informadas.
+            </p>
+          </mat-card-content>
+          <mat-card-actions>
+            <button mat-button color="primary" (click)="redirectToURL()">Ver más</button>
+          </mat-card-actions>
+        </mat-card>
       </div>
-      <p>
-        Establece una meta de ahorro mensual y trata de cumplirla. Puedes
-        ahorrar automáticamente mediante transferencias periódicas a una cuenta
-        de ahorro.
-        <button>Ver mas</button>
-      </p>
-    </div>
-
-    <div class="tip2">
-      <div class="items2">
-        <div class="titulof">
-          <h2>Paga tus deudas</h2>
-        </div>
-      </div>
-      <p>
-        Si tienes deudas, trata de pagarlas lo antes posible para evitar
-        intereses adicionales. Si tienes varias deudas, considera consolidarlas
-        en un solo pago.
-        <button>Ver mas</button>
-      </p>
-    </div>
-
-    <div class="tip2">
-      <div class="items2">
-        <div class="titulof">
-          <h2>Invierte en ti mismo</h2>
-        </div>
-      </div>
-      <p>
-        Considera la posibilidad de invertir en educación, cursos en línea,
-        libros o herramientas que puedan mejorar tus perspectivas laborales.
-        <button>Ver mas</button>
-      </p>
-    </div>
-
-    <div class="tip2">
-      <div class="items2">
-        <div class="titulof">
-          <h2>Compara precios</h2>
-        </div>
-      </div>
-      <p>
-        Antes de realizar una compra, investiga y compara precios para
-        asegurarte de que estás obteniendo la mejor oferta posible.
-
-        <button>Ver mas</button>
-      </p>
-    </div>
-
-    <div class="tip3">
-      <div class="items3">
-        <div class="titulof">
-          <h2>Planifica para el futuro</h2>
-        </div>
-      </div>
-      <p>
-        Asegúrate de estar preparado para situaciones inesperadas, como
-        emergencias médicas o reparaciones del hogar, mediante la creación de un
-        fondo de emergencia.
-        <button>Ver mas</button>
-      </p>
-    </div>
-
-    <div class="tip3">
-      <div class="items3">
-        <div class="titulof">
-          <h2>Buen historial crediticio</h2>
-        </div>
-      </div>
-      <p>
-        Debes cuidar tu reputación crediticia, cumpliendo puntualmente con tus
-        obligaciones, y no exclusivamente cuando se trate de deudas con
-        entidades financieras.
-        <button>Ver mas</button>
-      </p>
-    </div>
-
-    <div class="tip3">
-      <div class="items3">
-        <div class="titulof">
-          <h2>Busca Asesoramiento</h2>
-        </div>
-      </div>
-      <p>
-        Busca asesoramiento de un profesional financiero o de una fuente
-        confiable. Esto puede ayudarte a tomar decisiones informadas y a mejorar
-        tu situación financiera a largo plazo.
-        <button>Ver mas</button>
-      </p>
     </div>
   </div>
 </app-tool-bar>
