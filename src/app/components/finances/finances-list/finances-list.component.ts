@@ -72,7 +72,12 @@ export class FinancesListComponent implements OnInit {
 
         this.balance = 0
         res.forEach((element: Finance) => {
-          this.balance += element.exchange;
+          if(element.isIncome){
+            this.balance += element.exchange;
+          }
+          else {
+            this.balance -= element.exchange;
+          }
         });
       },
       error: console.log,
