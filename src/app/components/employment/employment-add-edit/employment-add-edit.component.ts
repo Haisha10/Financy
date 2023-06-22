@@ -44,9 +44,17 @@ export class EmploymentAddEditComponent {
   onFormSubmit() {
     if (this.employmentForm.valid) {
       if (this.data) {
-        this.employmentForm.value.isAvailable = this.data.isAvailable;
+        this.data.ruc = this.employmentForm.value.ruc;
+        this.data.name = this.employmentForm.value.name;
+        this.data.address = this.employmentForm.value.address;
+        this.data.description = this.employmentForm.value.description;
+        this.data.requirements = this.employmentForm.value.requirements;
+        this.data.creationDate = this.employmentForm.value.creationDate;
+        this.data.salary = this.employmentForm.value.salary;
+        this.data.phone = this.employmentForm.value.phone;
+        this.data.email = this.employmentForm.value.email;
         this._employmentsService
-          .updateEmployment(this.data.id, this.employmentForm.value, this.currentUser.id)
+          .updateEmployment(this.data.id, this.data, this.currentUser.id)
           .subscribe({
             next: (val: any) => {
               this._dialogRef.close(true);
