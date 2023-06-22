@@ -106,7 +106,7 @@ export class EmploymentListComponent implements OnInit {
     }
   }
 
-  openViewForm(data: Employment) {
+  openAddEditForm(data: Employment) {
     const dialogRef = this._dialog.open(EmploymentAddEditComponent, {
       data,
     });
