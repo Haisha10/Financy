@@ -78,7 +78,7 @@ export class AuthService {
         }
         else if (!userExists) {
           this._snackBar.openSnackBar(
-            'Correo electrónico o contraseña incorrecta.'
+            'Hay un problema con el servidor. Intente más tarde.'
           );
         } else if (userExists == null) {
           this._snackBar.openSnackBar(
